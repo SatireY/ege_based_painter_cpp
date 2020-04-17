@@ -1,4 +1,5 @@
 #include "draw.h"
+extern EGEEnvironmentController graphicsEnvironment;
 
 void DrawAllPrevShapes(bool withColor)
 {
@@ -134,7 +135,7 @@ void DrawAllPrevShapes(bool withColor)
     } // end of if
 }
 
-int RandColor(void)
+color_t RandColor(void)
 {
     int R = 0, G = 0, B = 0;
     int hexColorValue; // the final hexadecimal output

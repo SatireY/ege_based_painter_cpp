@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="Color.cpp" />
     <ClCompile Include="color_selector.cpp" />
     <ClCompile Include="Coordinate.cpp" />
@@ -163,9 +164,11 @@
     <ClCompile Include="mouse_draw.cpp" />
     <ClCompile Include="read_file.cpp" />
     <ClCompile Include="save_file.cpp" />
+    <ClCompile Include="Shape.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Circle.h" />
     <ClInclude Include="Color.h" />
     <ClInclude Include="color_selector.h" />
     <ClInclude Include="Coordinate.h" />
@@ -177,6 +180,7 @@
     <ClInclude Include="mouse_draw.h" />
     <ClInclude Include="read_file.h" />
     <ClInclude Include="save_file.h" />
+    <ClInclude Include="Shape.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

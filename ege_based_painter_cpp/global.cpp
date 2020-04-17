@@ -10,4 +10,6 @@ WORD             g_nTotalShapes = 0;
 bool             g_isFileEdited = false;
 char             fileValidityCheckSuffix = '\0';
 
-EGEEnvironmentController graphicsEnvironment;
+EGEEnvironmentController graphicsEnvironment{};
+int Shape::shapeCount = 0;
+int Circle::circleCount = 0;

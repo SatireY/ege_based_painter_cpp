@@ -13,18 +13,12 @@
 #include <vector>
 #include "EGEEnvironmentController.h"
 #include "Coordinate.h"
-
-enum SHAPE
-{
-    shape_line,
-    shape_circle,
-    shape_rectangle,
-    shape_polygon
-};
+#include "Shape.h"
+#include "Circle.h"
 
 struct ShapeData
 {
-    enum              SHAPE        shapeType;
+    SHAPE        shapeType;
     int               extraData[10];
     Coordinate        coords[50];
     bool              isFill;
