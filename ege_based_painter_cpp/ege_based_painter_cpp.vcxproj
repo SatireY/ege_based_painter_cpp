@@ -163,6 +163,7 @@
     <ClCompile Include="Line.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="mouse_draw.cpp" />
+    <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="read_file.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="save_file.cpp" />
@@ -181,6 +182,7 @@
     <ClInclude Include="Line.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="mouse_draw.h" />
+    <ClInclude Include="Polygon.h" />
     <ClInclude Include="read_file.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="save_file.h" />

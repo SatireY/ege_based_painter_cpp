@@ -7,5 +7,6 @@ Shape::Shape()
 
 Shape::~Shape()
 {
-	shapeCount++;
+	shapeCount--;
+	delete outlineColor;
 }

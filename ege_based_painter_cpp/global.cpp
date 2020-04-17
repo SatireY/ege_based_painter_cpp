@@ -14,3 +14,5 @@ EGEEnvironmentController graphicsEnvironment{};
 int Shape::shapeCount = 0;
 int Circle::circleCount = 0;
 int Rectangle::rectangleCount = 0;
+int Line::lineCount = 0;
+int Polygon::polygonCount = 0;

@@ -16,6 +16,8 @@
 #include "Shape.h"
 #include "Circle.h"
 #include "Rectangle.h"
+#include "Line.h"
+#include "Polygon.h"
 
 struct ShapeData
 {

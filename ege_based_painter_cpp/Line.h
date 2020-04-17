@@ -9,7 +9,7 @@ class Line :
 public:
 	static int lineCount;
 	Coordinate coords[2];
-	virtual void Draw(bool withColor) override;
+	void Draw(bool withColor) override;
 	Line();
 	Line(int x1, int y1, int x2, int y2);
 	Line(int x1, int y1, int x2, int y2, color_t outlineColor);

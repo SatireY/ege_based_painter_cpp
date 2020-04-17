@@ -1,6 +1,5 @@
 #pragma once
 #include "global.h"
-#include <Windows.h>
 #include "Shape.h"
 #include "draw.h"
 
@@ -9,11 +8,11 @@ class Circle :
 {
 public:
 	static       int circleCount;
-	color_t      fillColor;
+	Color*       fillColor = new Color{};
 	Coordinate   coords;
-	UINT         radius;
+	int          radius;
 	bool         isFill;
-	virtual void Draw(bool withColor) override;
+	void Draw(bool withColor) override;
 	Circle();
 	Circle(int x, int y, int radius);
 	Circle(int x, int y, int radius, color_t outlineColor);

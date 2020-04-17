@@ -1,5 +1,6 @@
 #pragma once
 #include "graphics.h"
+#include "Color.h"
 
 enum class SHAPE
 {
@@ -14,7 +15,7 @@ class Shape
 public:
 	static     int shapeCount;
 	SHAPE      shapeType;
-	color_t    outlineColor;
+	Color*     outlineColor = new Color{};
 	virtual void Draw(bool withColor) = 0;
 	Shape();
 	~Shape();

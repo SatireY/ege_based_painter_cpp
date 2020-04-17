@@ -9,10 +9,10 @@ class Rectangle :
 {
 public:
 	static             int rectangleCount;
-	color_t            fillColor;
+	Color*             fillColor = new Color{};
 	Coordinate         coords[2];
 	bool               isFill;
-	virtual void       Draw(bool withColor) override;
+	void       Draw(bool withColor) override;
 	Rectangle();
 	Rectangle(int x1, int y1, int x2, int y2);
 	Rectangle(int x1, int y1, int x2, int y2, color_t outlineColor);
