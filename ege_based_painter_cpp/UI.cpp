@@ -60,11 +60,11 @@ void InitUI(short int errCode)
     setcaption("CC »­°å");
     setcolor(0x909090);
     line(0, 579, 800, 579);
-    line(675, 579, 675, CANVAS_HIGHT);
-    line(142, 579, 142, CANVAS_HIGHT);
-    line(280, 579, 280, CANVAS_HIGHT);
-    line(500, 579, 500, CANVAS_HIGHT);
-    line(62, 579, 62, CANVAS_HIGHT);
+    line(675, 579, 675, graphicsEnvironment.GetCanvasHeight());
+    line(142, 579, 142, graphicsEnvironment.GetCanvasHeight());
+    line(280, 579, 280, graphicsEnvironment.GetCanvasHeight());
+    line(500, 579, 500, graphicsEnvironment.GetCanvasHeight());
+    line(62, 579, 62, graphicsEnvironment.GetCanvasHeight());
     line(10 + graphicsEnvironment.GetMenuWidth(), 1, 10 + graphicsEnvironment.GetMenuWidth(), 579);
 
     if (errCode == 0)

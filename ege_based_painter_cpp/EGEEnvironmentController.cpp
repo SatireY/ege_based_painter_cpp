@@ -2,52 +2,52 @@
 
 EGEEnvironmentController::EGEEnvironmentController()
 {
-	canvasWidth  = 800;
-	canvasHeight = 602;
-	fontSize     = 18;
-	font         = "Segoe UI";
-	menuWidth    = 220;
-	menuHeight   = 21;
-	refreshRate  = 800;
+    canvasWidth  = 800;
+    canvasHeight = 602;
+    fontSize     = 18;
+    font         = "Segoe UI";
+    menuWidth    = 220;
+    menuHeight   = 21;
+    refreshRate  = 800;
 }
 
 void EGEEnvironmentController::Initialize()
 {
-	initgraph(GetCanvasWidth(), GetCanvasHeight());
-	setfont(GetFontSize(), 0, GetFont());
+    initgraph(GetCanvasWidth(), GetCanvasHeight());
+    setfont(GetFontSize(), 0, GetFont());
 }
 
 INT EGEEnvironmentController::GetCanvasWidth()
 {
-	return canvasWidth;
+    return canvasWidth;
 }
 
 INT EGEEnvironmentController::GetCanvasHeight()
 {
-	return canvasHeight;
+    return canvasHeight;
 }
 
 INT EGEEnvironmentController::GetFontSize()
 {
-	return fontSize;
+    return fontSize;
 }
 
 const char* EGEEnvironmentController::GetFont()
 {
-	return font.c_str();
+    return font.c_str();
 }
 
 INT EGEEnvironmentController::GetMenuWidth()
 {
-	return menuWidth;
+    return menuWidth;
 }
 
 INT EGEEnvironmentController::GetMenuHeight()
 {
-	return menuHeight;
+    return menuHeight;
 }
 
 INT EGEEnvironmentController::GetRefreshRate()
 {
-	return refreshRate;
+    return refreshRate;
 }
