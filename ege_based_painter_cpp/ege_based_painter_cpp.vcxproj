@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Color.cpp" />
     <ClCompile Include="color_selector.cpp" />
     <ClCompile Include="Coordinate.cpp" />
     <ClCompile Include="coord_draw.cpp" />
@@ -165,6 +166,7 @@
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Color.h" />
     <ClInclude Include="color_selector.h" />
     <ClInclude Include="Coordinate.h" />
     <ClInclude Include="coord_draw.h" />
