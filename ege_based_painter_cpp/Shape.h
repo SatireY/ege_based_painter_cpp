@@ -18,6 +18,5 @@ public:
 	virtual void Draw(bool withColor) = 0;
 	Shape();
 	~Shape();
-
 };
 

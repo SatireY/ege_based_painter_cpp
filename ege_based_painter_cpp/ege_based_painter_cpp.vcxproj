@@ -160,6 +160,7 @@
     <ClCompile Include="EGEEnvironmentController.cpp" />
     <ClCompile Include="ege_based_painter_cpp.cpp" />
     <ClCompile Include="global.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="mouse_draw.cpp" />
     <ClCompile Include="read_file.cpp" />
@@ -177,6 +178,7 @@
     <ClInclude Include="draw.h" />
     <ClInclude Include="EGEEnvironmentController.h" />
     <ClInclude Include="global.h" />
+    <ClInclude Include="Line.h" />
     <ClInclude Include="menu.h" />
     <ClInclude Include="mouse_draw.h" />
     <ClInclude Include="read_file.h" />
