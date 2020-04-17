@@ -7,11 +7,12 @@ class Polygon :
 	public Shape
 {
 public:
-	static int polygonCount;
-	Color fillColor{};
+	static                   int polygonCount;
+	Color*                   fillColor = new Color{};
+	int                      vertexCount;
 	std::vector <Coordinate> coords;
-	bool isFill;
-	void Draw(bool withColor) override;
+	bool                     isFill;
+	void                     Draw(bool withColor) override;
 	Polygon();
 	Polygon(std::vector <Coordinate> coords);
 	Polygon(std::vector <Coordinate> coords, color_t outlineColor);
