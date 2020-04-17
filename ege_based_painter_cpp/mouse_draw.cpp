@@ -45,7 +45,7 @@ void mouse_DrawCircle(void)
 
                     // store coordinate data
                     g_nTotalShapes++;
-                    shapeData[g_nTotalShapes - 1].shapeType = shape_circle;
+                    shapeData[g_nTotalShapes - 1].shapeType = SHAPE::shape_circle;
                     shapeData[g_nTotalShapes - 1].coords[0].x = circleCenterX;
                     shapeData[g_nTotalShapes - 1].coords[0].y = circleCenterY;
                     shapeData[g_nTotalShapes - 1].coords[1].x = circleOuterX;
@@ -300,7 +300,7 @@ void mouse_DrawLine(void)
 
                     // store coordinate data
                     g_nTotalShapes++;
-                    shapeData[g_nTotalShapes - 1].shapeType = shape_line;
+                    shapeData[g_nTotalShapes - 1].shapeType = SHAPE::shape_line;
                     shapeData[g_nTotalShapes - 1].coords[0].x = lineStartPositionX;
                     shapeData[g_nTotalShapes - 1].coords[0].y = lineStartPositionY;
                     shapeData[g_nTotalShapes - 1].coords[1].x = lineEndPositionX;
@@ -534,7 +534,7 @@ void mouse_DrawRectangle(void)
 
                     // store coordinate data
                     g_nTotalShapes++;
-                    shapeData[g_nTotalShapes - 1].shapeType = shape_rectangle;
+                    shapeData[g_nTotalShapes - 1].shapeType = SHAPE::shape_rectangle;
                     shapeData[g_nTotalShapes - 1].coords[0].x = rectUpLCornerX;
                     shapeData[g_nTotalShapes - 1].coords[0].y = rectUpLCornerY;
                     shapeData[g_nTotalShapes - 1].coords[1].x = rectLowRCornerX;
@@ -854,7 +854,7 @@ void mouse_DrawPoly(void)
                         polyCoords[2 * sides] = polyCoords[0];
                         polyCoords[2 * sides + 1] = polyCoords[1];
                         g_nTotalShapes++;
-                        shapeData[g_nTotalShapes - 1].shapeType = shape_polygon;
+                        shapeData[g_nTotalShapes - 1].shapeType = SHAPE::shape_polygon;
                         shapeData[g_nTotalShapes - 1].extraData[0] = sides; // record the sides
 
                         // prepare the coordinate data for storage

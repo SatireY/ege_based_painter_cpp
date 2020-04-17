@@ -32,19 +32,19 @@ void InitUI(short int errCode)
         {
             switch (shapeData[i].shapeType)
             {
-                case shape_line:
+                case SHAPE::shape_line:
                     nLines++;
                     break;
 
-                case shape_circle:
+                case SHAPE::shape_circle:
                     nCircles++;
                     break;
 
-                case shape_rectangle:
+                case SHAPE::shape_rectangle:
                     nRectangles++;
                     break;
 
-                case shape_polygon:
+                case SHAPE::shape_polygon:
                     nPolygons++;
                     break;
 

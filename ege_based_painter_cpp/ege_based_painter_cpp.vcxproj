@@ -163,6 +163,7 @@
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="mouse_draw.cpp" />
     <ClCompile Include="read_file.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="save_file.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="UI.cpp" />
@@ -179,6 +180,7 @@
     <ClInclude Include="menu.h" />
     <ClInclude Include="mouse_draw.h" />
     <ClInclude Include="read_file.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="save_file.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="UI.h" />

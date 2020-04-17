@@ -33,7 +33,7 @@ void DrawAllPrevShapes(bool withColor)
 
             switch (shapeData[i].shapeType)
             {
-                case shape_line:
+            case SHAPE::shape_line:
                     /*line(shapeData[i].coords[0].x,
                         shapeData[i].coords[0].y,
                         shapeData[i].coords[1].x,
@@ -44,7 +44,7 @@ void DrawAllPrevShapes(bool withColor)
                          ((shapeData + i)->coords + 1)->y);
                     break;
 
-                case shape_circle:
+                case SHAPE::shape_circle:
 
                     /*circle(shapeData[i].coords[0].x,
                            shapeData[i].coords[0].y,
@@ -71,7 +71,7 @@ void DrawAllPrevShapes(bool withColor)
 
                     break;
 
-                case shape_rectangle:
+                case SHAPE::shape_rectangle:
                     if (shapeData[i].isFill)
                     {
                         bar(((shapeData + i)->coords)->x,
@@ -93,7 +93,7 @@ void DrawAllPrevShapes(bool withColor)
                         ((shapeData + i)->coords + 1)->y);*/
                     break;
 
-                case shape_polygon:
+                case SHAPE::shape_polygon:
 
                     //for (int j = 0; j < shapeData[i].extraData[0]; j++)
                     //{

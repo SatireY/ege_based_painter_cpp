@@ -145,7 +145,7 @@ void coord_DrawPolyPrompt(void)
 
     fillpoly(sides, numRead );
     g_nTotalShapes++;
-    shapeData[g_nTotalShapes - 1].shapeType = shape_polygon;
+    shapeData[g_nTotalShapes - 1].shapeType = SHAPE::shape_polygon;
     shapeData[g_nTotalShapes - 1].extraData[0] = sides; // record the sides
 
     // prepare the coordinate data for storage
