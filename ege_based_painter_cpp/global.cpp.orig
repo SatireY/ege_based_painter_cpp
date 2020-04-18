@@ -18,4 +18,4 @@ int Line::lineCount           = 0;
 int myPolygon::polygonCount     = 0;
 
 
-std::vector <Shape *> shapeData;
+std::vector <Shape*> shapeData;

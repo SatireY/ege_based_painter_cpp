@@ -32,7 +32,7 @@ INT EGEEnvironmentController::GetFontSize()
     return fontSize;
 }
 
-const char *EGEEnvironmentController::GetFont()
+const char* EGEEnvironmentController::GetFont()
 {
     return font.c_str();
 }

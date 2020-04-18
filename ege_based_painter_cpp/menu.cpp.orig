@@ -51,9 +51,9 @@ void Menu(bool readResult)
                         if (true)
                         {
                             int selection1 = MessageBox(NULL,
-                                                        TEXT("是否确定所有图形？此操作无法撤回。"),
-                                                        TEXT("提示"),
-                                                        MB_OKCANCEL | MB_SYSTEMMODAL | MB_ICONEXCLAMATION);
+                                TEXT("是否确定所有图形？此操作无法撤回。"),
+                                TEXT("提示"),
+                                MB_OKCANCEL | MB_SYSTEMMODAL | MB_ICONEXCLAMATION);
 
                             if (selection1 == IDOK)
                             {
@@ -62,9 +62,9 @@ void Menu(bool readResult)
                                 InitUI(0);
                                 delay_fps(REFRESH_RATE);
                                 MessageBox(NULL,
-                                           TEXT("已清除所有图形"),
-                                           TEXT("提示"),
-                                           MB_OK | MB_SYSTEMMODAL | MB_ICONINFORMATION);
+                                    TEXT("已清除所有图形"),
+                                    TEXT("提示"),
+                                    MB_OK | MB_SYSTEMMODAL | MB_ICONINFORMATION);
 
                                 goto move;
                             }
@@ -73,7 +73,7 @@ void Menu(bool readResult)
                                 break;
                             }
                         }
-
+                        
                         break;
 
                     case 4: // 画线

@@ -15,12 +15,11 @@ void InitUI(short int errCode)
         {
             setcolor(0xAA5050);
             setfont(30, 0, graphicsEnvironment.GetFont());
-            xyprintf(graphicsEnvironment.GetMenuWidth() + 118, 400,
-                     "图形过多！即将溢出！请停止绘画并立即保存！");
+            xyprintf(graphicsEnvironment.GetMenuWidth() + 118, 400, "图形过多！即将溢出！请停止绘画并立即保存！");
             setfont(graphicsEnvironment.GetFontSize(), 0, graphicsEnvironment.GetFont());
         }
     }
-
+    
 
     // count the number of each shape
     //if (tmp_totalShapes != g_nTotalShapes)
@@ -78,31 +77,31 @@ void InitUI(short int errCode)
             {
                 switch (shapeData[i]->shapeType)
                 {
-                    case SHAPE::shape_line:
-                        nLines++;
-                        break;
+                case SHAPE::shape_line:
+                    nLines++;
+                    break;
 
-                    case SHAPE::shape_circle:
-                        nCircles++;
-                        break;
+                case SHAPE::shape_circle:
+                    nCircles++;
+                    break;
 
-                    case SHAPE::shape_rectangle:
-                        nRectangles++;
-                        break;
+                case SHAPE::shape_rectangle:
+                    nRectangles++;
+                    break;
 
-                    case SHAPE::shape_polygon:
-                        nPolygons++;
-                        break;
+                case SHAPE::shape_polygon:
+                    nPolygons++;
+                    break;
 
-                    default:
-                        break;
+                default:
+                    break;
                 }
             }
         }
 
         tmp_totalShapes = shapeData[0]->shapeCount;
     }
-
+        
 
     // draw basic lines
     setcaption("CC 画板");
@@ -113,8 +112,7 @@ void InitUI(short int errCode)
     line(280, 579, 280, graphicsEnvironment.GetCanvasHeight());
     line(500, 579, 500, graphicsEnvironment.GetCanvasHeight());
     line(62, 579, 62, graphicsEnvironment.GetCanvasHeight());
-    line(10 + graphicsEnvironment.GetMenuWidth(), 1,
-         10 + graphicsEnvironment.GetMenuWidth(), 579);
+    line(10 + graphicsEnvironment.GetMenuWidth(), 1, 10 + graphicsEnvironment.GetMenuWidth(), 579);
 
     if (errCode == 0)
     {
@@ -190,7 +188,7 @@ void ClearData(void)
         delete i;
         shapeData.pop_back();
     }
-
+    
 }
 
 void DrawMenuOutline(WORD lnStart,

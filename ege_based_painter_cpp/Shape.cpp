@@ -2,11 +2,11 @@
 
 Shape::Shape()
 {
-	shapeCount++;
+    shapeCount++;
 }
 
 Shape::~Shape()
 {
-	shapeCount--;
-	delete outlineColor;
+    shapeCount--;
+    delete outlineColor;
 }

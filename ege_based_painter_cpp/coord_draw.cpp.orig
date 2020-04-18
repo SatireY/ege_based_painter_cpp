@@ -186,7 +186,7 @@ void coord_DrawPolyPrompt(void)
 void coord_DrawPoly(void)
 {
     MessageBox(NULL, TEXT("未实现！"), NULL,
-               MB_OK | MB_SYSTEMMODAL | MB_ICONEXCLAMATION);
+        MB_OK | MB_SYSTEMMODAL | MB_ICONEXCLAMATION);
     return;
 
 
@@ -199,143 +199,143 @@ void coord_DrawPoly(void)
 
 
 
-    //    const short int TOTAL_LN = 5; // total items in the menu bar
-    //    bool            isInProgress = false;
-    //
-    //    printf("已进入坐标画多边形模式\n");
-    //    DrawAllPrevShapes(true);
-    //    DrawMenuOutline(1, TOTAL_LN, 1);
-    //    setcolor(0x000000);
-    //    PrintCoordDrawingInsideMenu(0);
-    //    mouse_msg msg;
-    //
-    //    for (; is_run();
-    //         delay_fps(
-    //             REFRESH_RATE)) // Using "for" statement to draw multiple circles at a time and refresh the screen
-    //    {
-    //        msg = getmouse();
-    //
-    //        switch (msg.msg)
-    //        {
-    //            case mouse_msg_down:
-    //                switch (GetMouseCurrentLnAndCol(1, TOTAL_LN, 1, 1).ln)
-    //                {
-    //                    case 1:
-    //                        return;
-    //                        break;
-    //
-    //                    case 2: // undo
-    //                        if (g_nTotalShapes > 0)
-    //                        {
-    //                            if (!isInProgress)
-    //                            {
-    //                                g_nTotalShapes--;
-    //                            }
-    //                        }
-    //
-    //                        // refresh the windows with menu contents
-    //                        cleardevice();
-    //                        InitUI(0);
-    //                        DrawMenuOutline(1, TOTAL_LN, 1);
-    //                        setcolor(0x000000);
-    //                        PrintMouseDrawingInsideMenu(0);
-    //                        setcolor(0x50AA50);
-    //                        xyprintf(678, 582, "当前坐标: (%03d, %03d)", msg.x, msg.y);
-    //                        DrawAllPrevShapes(true);
-    //                        goto move;
-    //                        break;
-    //
-    //                    case 3: // draw a polygon
-    //                        coord_DrawPolyPrompt();
-    //                        cleardevice();
-    //                        InitUI(0);
-    //                        DrawAllPrevShapes(true);
-    //                        break;
-    //
-    //                    case 4: // choose foreground color
-    //                        ChooseColor_EGE(0);
-    //                        cleardevice();
-    //                        InitUI(0);
-    //                        DrawAllPrevShapes(true);
-    //                        goto move;
-    //                        break;
-    //
-    //                    case 5: // choose fill color
-    //                        ChooseColor_EGE(1);
-    //                        cleardevice();
-    //                        InitUI(0);
-    //                        DrawAllPrevShapes(true);
-    //                        goto move;
-    //                        break;
-    //
-    //                    default:
-    //                        break;
-    //                }
-    //
-    //                break; // not needed
-    //
-    //            case mouse_msg_move:
-    //move:
-    //
-    //                InitUI(0);
-    //                DrawAllPrevShapes(true);
-    //                //DrawMenuOutline(1, TOTAL_LN, 1);
-    //                //setcolor(0x000000);
-    //                //PrintCoordDrawingInsideMenu(0);
-    //                setcolor(0x50AA50);
-    //                xyprintf(678, 582, "当前坐标: (%03d, %03d)", msg.x, msg.y);
-    //
-    //                switch (GetMouseCurrentLnAndCol(1, TOTAL_LN, 1, 1).ln)
-    //                {
-    //                    case 0:
-    //                        DrawMenuOutline(1, TOTAL_LN, 1);
-    //                        setcolor(0x000000);
-    //                        PrintCoordDrawingInsideMenu(0);
-    //                        break;
-    //
-    //                    case 1:
-    //                        setcolor(0x000000);
-    //                        PrintCoordDrawingInsideMenu(0);
-    //                        setcolor(0x5050AA);
-    //                        PrintCoordDrawingInsideMenu(1);
-    //                        break;
-    //
-    //                    case 2:
-    //                        setcolor(0x000000);
-    //                        PrintCoordDrawingInsideMenu(0);
-    //                        setcolor(0x5050AA);
-    //                        PrintCoordDrawingInsideMenu(2);
-    //                        break;
-    //
-    //                    case 3:
-    //                        setcolor(0x000000);
-    //                        PrintCoordDrawingInsideMenu(0);
-    //                        setcolor(0x5050AA);
-    //                        PrintCoordDrawingInsideMenu(3);
-    //                        break;
-    //
-    //                    case 4:
-    //                        setcolor(0x000000);
-    //                        PrintCoordDrawingInsideMenu(0);
-    //                        setcolor(0x5050AA);
-    //                        PrintCoordDrawingInsideMenu(4);
-    //                        break;
-    //
-    //                    case 5:
-    //                        setcolor(0x000000);
-    //                        PrintCoordDrawingInsideMenu(0);
-    //                        setcolor(0x5050AA);
-    //                        PrintCoordDrawingInsideMenu(5);
-    //                        break;
-    //
-    //                    default:
-    //                        break;
-    //                }
-    //
-    //                break;
-    //
-    //            default:
-    //                break;
-    //        }
-    //    }
+//    const short int TOTAL_LN = 5; // total items in the menu bar
+//    bool            isInProgress = false;
+//
+//    printf("已进入坐标画多边形模式\n");
+//    DrawAllPrevShapes(true);
+//    DrawMenuOutline(1, TOTAL_LN, 1);
+//    setcolor(0x000000);
+//    PrintCoordDrawingInsideMenu(0);
+//    mouse_msg msg;
+//
+//    for (; is_run();
+//         delay_fps(
+//             REFRESH_RATE)) // Using "for" statement to draw multiple circles at a time and refresh the screen
+//    {
+//        msg = getmouse();
+//
+//        switch (msg.msg)
+//        {
+//            case mouse_msg_down:
+//                switch (GetMouseCurrentLnAndCol(1, TOTAL_LN, 1, 1).ln)
+//                {
+//                    case 1:
+//                        return;
+//                        break;
+//
+//                    case 2: // undo
+//                        if (g_nTotalShapes > 0)
+//                        {
+//                            if (!isInProgress)
+//                            {
+//                                g_nTotalShapes--;
+//                            }
+//                        }
+//
+//                        // refresh the windows with menu contents
+//                        cleardevice();
+//                        InitUI(0);
+//                        DrawMenuOutline(1, TOTAL_LN, 1);
+//                        setcolor(0x000000);
+//                        PrintMouseDrawingInsideMenu(0);
+//                        setcolor(0x50AA50);
+//                        xyprintf(678, 582, "当前坐标: (%03d, %03d)", msg.x, msg.y);
+//                        DrawAllPrevShapes(true);
+//                        goto move;
+//                        break;
+//
+//                    case 3: // draw a polygon
+//                        coord_DrawPolyPrompt();
+//                        cleardevice();
+//                        InitUI(0);
+//                        DrawAllPrevShapes(true);
+//                        break;
+//
+//                    case 4: // choose foreground color
+//                        ChooseColor_EGE(0);
+//                        cleardevice();
+//                        InitUI(0);
+//                        DrawAllPrevShapes(true);
+//                        goto move;
+//                        break;
+//
+//                    case 5: // choose fill color
+//                        ChooseColor_EGE(1);
+//                        cleardevice();
+//                        InitUI(0);
+//                        DrawAllPrevShapes(true);
+//                        goto move;
+//                        break;
+//
+//                    default:
+//                        break;
+//                }
+//
+//                break; // not needed
+//
+//            case mouse_msg_move:
+//move:
+//
+//                InitUI(0);
+//                DrawAllPrevShapes(true);
+//                //DrawMenuOutline(1, TOTAL_LN, 1);
+//                //setcolor(0x000000);
+//                //PrintCoordDrawingInsideMenu(0);
+//                setcolor(0x50AA50);
+//                xyprintf(678, 582, "当前坐标: (%03d, %03d)", msg.x, msg.y);
+//
+//                switch (GetMouseCurrentLnAndCol(1, TOTAL_LN, 1, 1).ln)
+//                {
+//                    case 0:
+//                        DrawMenuOutline(1, TOTAL_LN, 1);
+//                        setcolor(0x000000);
+//                        PrintCoordDrawingInsideMenu(0);
+//                        break;
+//
+//                    case 1:
+//                        setcolor(0x000000);
+//                        PrintCoordDrawingInsideMenu(0);
+//                        setcolor(0x5050AA);
+//                        PrintCoordDrawingInsideMenu(1);
+//                        break;
+//
+//                    case 2:
+//                        setcolor(0x000000);
+//                        PrintCoordDrawingInsideMenu(0);
+//                        setcolor(0x5050AA);
+//                        PrintCoordDrawingInsideMenu(2);
+//                        break;
+//
+//                    case 3:
+//                        setcolor(0x000000);
+//                        PrintCoordDrawingInsideMenu(0);
+//                        setcolor(0x5050AA);
+//                        PrintCoordDrawingInsideMenu(3);
+//                        break;
+//
+//                    case 4:
+//                        setcolor(0x000000);
+//                        PrintCoordDrawingInsideMenu(0);
+//                        setcolor(0x5050AA);
+//                        PrintCoordDrawingInsideMenu(4);
+//                        break;
+//
+//                    case 5:
+//                        setcolor(0x000000);
+//                        PrintCoordDrawingInsideMenu(0);
+//                        setcolor(0x5050AA);
+//                        PrintCoordDrawingInsideMenu(5);
+//                        break;
+//
+//                    default:
+//                        break;
+//                }
+//
+//                break;
+//
+//            default:
+//                break;
+//        }
+//    }
 }

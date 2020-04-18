@@ -19,7 +19,7 @@ extern color_t    g_customColor;
 extern color_t    g_customFillColor;
 extern EGEEnvironmentController graphicsEnvironment;
 
-extern std::vector <Shape *> shapeData;
+extern std::vector <Shape*> shapeData;
 //extern int shapeCount;
 //extern int circleCount;
 //extern int rectangleCount;

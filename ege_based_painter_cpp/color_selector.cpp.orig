@@ -60,8 +60,7 @@ void ChooseColor_EGE(WORD mode)
                 if (tmp_x > 0
                     && tmp_x < 0.9 * 256
                     && tmp_y > 8 + 11 * graphicsEnvironment.GetMenuHeight()
-                    && tmp_y < (double)8 + (double)11 * graphicsEnvironment.GetMenuHeight() +
-                    (double)360 * 0.9)
+                    && tmp_y < (double)8 + (double)11 * graphicsEnvironment.GetMenuHeight() + (double)360 * 0.9)
                 {
                     if (mode == 0)
                     {
