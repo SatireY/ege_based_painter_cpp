@@ -44,33 +44,33 @@ Circle::Circle()
 
 Circle::Circle(int x, int y, int radius) : Circle()
 {
-	shapeType               = SHAPE::shape_circle;
-	isFill                  = false;
+	shapeType                = SHAPE::shape_circle;
+	isFill                   = false;
 	outlineColor->colorValue = RandColor();
-	coords.x                = x;
-	coords.y                = y;
+	coords.x                 = x;
+	coords.y                 = y;
 	this->radius = radius;
 }
 
 Circle::Circle(int x, int y, int radius, color_t outlineColor) : Circle()
 {
-	shapeType                     = SHAPE::shape_circle;
-	isFill                        = false;
+	shapeType                      = SHAPE::shape_circle;
+	isFill                         = false;
 	this->outlineColor->colorValue = outlineColor;
-	coords.x                      = x;
-	coords.y                      = y;
-	this->radius                  = radius;
+	coords.x                       = x;
+	coords.y                       = y;
+	this->radius                   = radius;
 }
 
 Circle::Circle(int x, int y, int radius, color_t outlineColor, color_t fillColor) : Circle()
 {
-	shapeType                     = SHAPE::shape_circle;
-	isFill                        = true;
+	shapeType                      = SHAPE::shape_circle;
+	isFill                         = true;
 	this->outlineColor->colorValue = outlineColor;
 	this->fillColor->colorValue    = fillColor;
-	coords.x                      = x;
-	coords.y                      = y;
-	this->radius                  = radius;
+	coords.x                       = x;
+	coords.y                       = y;
+	this->radius                   = radius;
 }
 
 Circle::~Circle()

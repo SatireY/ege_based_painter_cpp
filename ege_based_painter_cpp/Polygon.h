@@ -14,9 +14,9 @@ public:
 	bool                     isFill;
 	void                     Draw(bool withColor) override;
 	Polygon();
-	Polygon(std::vector <Coordinate> coords);
-	Polygon(std::vector <Coordinate> coords, color_t outlineColor);
-	Polygon(std::vector <Coordinate> coords, color_t outlineColor, color_t fillColor);
+	Polygon(const std::vector <Coordinate> coords);
+	Polygon(const std::vector <Coordinate> coords, color_t outlineColor);
+	Polygon(const std::vector <Coordinate> coords, color_t outlineColor, color_t fillColor);
 	~Polygon();
 };
 
