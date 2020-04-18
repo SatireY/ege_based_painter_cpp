@@ -4,9 +4,9 @@
 #include "UI.h"
 #include "color_selector.h"
 
-extern WORD g_nTotalShapes;
+//extern WORD g_nTotalShapes;
 
-void mouse_DrawCircle(void);
+// void mouse_DrawCircle(void);
 void mouse_DrawLine(void);
 void mouse_DrawRectangle(void);
 void mouse_DrawPoly(void);

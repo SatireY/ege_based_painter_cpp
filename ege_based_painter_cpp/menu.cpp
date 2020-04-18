@@ -2,7 +2,7 @@
 
 void Menu(bool readResult)
 {
-    const short int TOTAL_LN = 8;
+    const short int TOTAL_LN = 7;
 
     cleardevice();
     InitUI(0);
@@ -48,14 +48,15 @@ void Menu(bool readResult)
                         break;
 
                     case 3: // 清除所有图形
-
+                        ClearData();
                         cleardevice();
+                        InitUI(0);
+                        delay_fps(REFRESH_RATE);
                         MessageBox(NULL,
                                    TEXT("已清除所有图形"),
                                    TEXT("提示"),
                                    MB_OK | MB_SYSTEMMODAL | MB_ICONINFORMATION);
-                        InitUI(0);
-                        ClearData();
+                        
                         goto move;
                         break;
 
@@ -95,14 +96,14 @@ void Menu(bool readResult)
                         goto move;
                         break;
 
-                    case 8: // 画多边形
-                        cleardevice();
-                        InitUI(0);
-                        coord_DrawPoly();
-                        cleardevice();
-                        InitUI(0);
-                        goto move;
-                        break;
+                    //case 8: // 画多边形
+                    //    cleardevice();
+                    //    InitUI(0);
+                    //    coord_DrawPoly();
+                    //    cleardevice();
+                    //    InitUI(0);
+                    //    goto move;
+                    //    break;
 
                     default:
                         break;
@@ -174,12 +175,12 @@ move:
                         PrintMenu(7);
                         break;
 
-                    case 8:
+                    /*case 8:
                         setcolor(0x000000);
                         PrintMenu(0);
                         setcolor(0x5050AA);
                         PrintMenu(8);
-                        break;
+                        break;*/
 
                     default:
                         break;
@@ -202,8 +203,8 @@ void PrintMenu(short int lnToPrint)
             setfont(40, 0, "Segoe UI");
             xyprintf(graphicsEnvironment.GetMenuWidth() + 170, 250, "欢迎来到 CC 画板");
             setfont(graphicsEnvironment.GetFontSize(), 0, graphicsEnvironment.GetFont());
-            xyprintf(graphicsEnvironment.GetMenuWidth() + 118, 300,
-                     "注：如需检查作业完成情况请看带有“(作业)”的选项");
+            /*xyprintf(graphicsEnvironment.GetMenuWidth() + 118, 300,
+                     "注：如需检查作业完成情况请看带有“(作业)”的选项");*/
             xyprintf(8, 8 + 0 * graphicsEnvironment.GetMenuHeight(), "退出");
             xyprintf(8, 8 + 1 * graphicsEnvironment.GetMenuHeight(), "另存为");
             xyprintf(8, 8 + 2 * graphicsEnvironment.GetMenuHeight(), "清除所有图形");
@@ -211,7 +212,7 @@ void PrintMenu(short int lnToPrint)
             xyprintf(8, 8 + 4 * graphicsEnvironment.GetMenuHeight(), "用鼠标画圆");
             xyprintf(8, 8 + 5 * graphicsEnvironment.GetMenuHeight(), "用鼠标画矩形");
             xyprintf(8, 8 + 6 * graphicsEnvironment.GetMenuHeight(), "用鼠标画多边形");
-            xyprintf(8, 8 + 7 * graphicsEnvironment.GetMenuHeight(), "!!!（作业）坐标绘制多边形");
+            //xyprintf(8, 8 + 7 * graphicsEnvironment.GetMenuHeight(), "!!!（作业）坐标绘制多边形");
             break;
 
         case 1:
@@ -242,9 +243,9 @@ void PrintMenu(short int lnToPrint)
             xyprintf(8, 8 + 6 * graphicsEnvironment.GetMenuHeight(), "用鼠标画多边形");
             break;
 
-        case 8:
+        /*case 8:
             xyprintf(8, 8 + 7 * graphicsEnvironment.GetMenuHeight(), "!!!（作业）坐标绘制多边形");
-            break;
+            break;*/
 
         default:
             break;

@@ -9,29 +9,74 @@ void InitUI(short int errCode)
     static WORD nRectangles;
     static WORD nPolygons;
 
-    if (g_nTotalShapes >= 500)
+    if (shapeData.size() > 0)
     {
-        setcolor(0xAA5050);
-        setfont(30, 0, graphicsEnvironment.GetFont());
-        xyprintf(graphicsEnvironment.GetMenuWidth() + 118, 400, "图形过多！即将溢出！请停止绘画并立即保存！");
-        setfont(graphicsEnvironment.GetFontSize(), 0, graphicsEnvironment.GetFont());
+        if (shapeData[0]->shapeCount >= 500)
+        {
+            setcolor(0xAA5050);
+            setfont(30, 0, graphicsEnvironment.GetFont());
+            xyprintf(graphicsEnvironment.GetMenuWidth() + 118, 400, "图形过多！即将溢出！请停止绘画并立即保存！");
+            setfont(graphicsEnvironment.GetFontSize(), 0, graphicsEnvironment.GetFont());
+        }
     }
+    
 
     // count the number of each shape
-    if (tmp_totalShapes != g_nTotalShapes)
+    //if (tmp_totalShapes != g_nTotalShapes)
+    //{
+    //    g_isFileEdited = true; // indicates whether the picture is edited
+
+    //    // initialize variables for counting
+    //    nLines = 0;
+    //    nCircles = 0;
+    //    nRectangles = 0;
+    //    nPolygons = 0;
+
+    //    for (int i = 0; i < g_nTotalShapes; i++)
+    //    {
+    //        switch (shapeData[i].shapeType)
+    //        {
+    //            case SHAPE::shape_line:
+    //                nLines++;
+    //                break;
+
+    //            case SHAPE::shape_circle:
+    //                nCircles++;
+    //                break;
+
+    //            case SHAPE::shape_rectangle:
+    //                nRectangles++;
+    //                break;
+
+    //            case SHAPE::shape_polygon:
+    //                nPolygons++;
+    //                break;
+
+    //            default:
+    //                break;
+    //        }
+    //    }
+    //}
+
+    //tmp_totalShapes = g_nTotalShapes;
+
+    //count the number of each shape
+    if (shapeData.size() > 0)
     {
-        g_isFileEdited = true; // indicates whether the picture is edited
-
-        // initialize variables for counting
-        nLines = 0;
-        nCircles = 0;
-        nRectangles = 0;
-        nPolygons = 0;
-
-        for (int i = 0; i < g_nTotalShapes; i++)
+        if (tmp_totalShapes != shapeData[0]->shapeCount)
         {
-            switch (shapeData[i].shapeType)
+            g_isFileEdited = true; // indicates whether the picture is edited
+
+            // initialize variables for counting
+            nLines = 0;
+            nCircles = 0;
+            nRectangles = 0;
+            nPolygons = 0;
+
+            for (int i = 0; i < shapeData[0]->shapeCount; i++)
             {
+                switch (shapeData[i]->shapeType)
+                {
                 case SHAPE::shape_line:
                     nLines++;
                     break;
@@ -50,11 +95,13 @@ void InitUI(short int errCode)
 
                 default:
                     break;
+                }
             }
         }
-    }
 
-    tmp_totalShapes = g_nTotalShapes;
+        tmp_totalShapes = shapeData[0]->shapeCount;
+    }
+        
 
     // draw basic lines
     setcaption("CC 画板");
@@ -136,8 +183,12 @@ void InitUI(short int errCode)
 
 void ClearData(void)
 {
-    memset(shapeData, '\0', sizeof(shapeData));
-    g_nTotalShapes = 0;
+    for (auto i : shapeData)
+    {
+        delete i;
+        shapeData.pop_back();
+    }
+    
 }
 
 void DrawMenuOutline(WORD lnStart,

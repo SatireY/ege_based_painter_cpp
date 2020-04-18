@@ -13,6 +13,6 @@ color_t alphacol(color_t d, color_t s, color_t alpha);
 extern bool
 g_isUserSetColor; // global variable. used to determine whether the user has set a custom color
 extern bool g_isUserSetFillColor;
-extern int g_customColor;
-extern int g_customFillColor;
+extern color_t g_customColor;
+extern color_t g_customFillColor;
 extern bool   g_isFillColorRandom;

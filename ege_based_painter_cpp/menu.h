@@ -6,6 +6,7 @@
 #include "UI.h"
 #include "save_file.h"
 #include "EGEEnvironmentController.h"
+#include "mouse_draw_circle.h"
 
 extern WORD g_nTotalShapes;
 extern bool g_isFileEdited;

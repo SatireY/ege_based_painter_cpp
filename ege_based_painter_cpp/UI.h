@@ -2,17 +2,29 @@
 #include "global.h"
 #include "graphics.h"
 #include "EGEEnvironmentController.h"
+#include "Shape.h"
+#include "Circle.h"
+#include "Rectangle.h"
+#include "Line.h"
+#include "Polygon.h"
 
-extern WORD   g_nTotalShapes;
-extern struct ShapeData shapeData[512];
+// extern WORD   g_nTotalShapes;
+// extern struct ShapeData shapeData[512];
 extern bool   g_isFileEdited;
 extern bool
 g_isUserSetColor; // global variable. used to determine whether the user has set a custom color
 extern bool   g_isUserSetFillColor;
 extern bool   g_isFillColorRandom;
-extern int    g_customColor;
-extern int    g_customFillColor;
+extern color_t    g_customColor;
+extern color_t    g_customFillColor;
 extern EGEEnvironmentController graphicsEnvironment;
+
+extern std::vector <Shape*> shapeData;
+//extern int shapeCount;
+//extern int circleCount;
+//extern int rectangleCount;
+//extern int lineCount;
+//extern int polygonCount;
 
 void InitUI(short int errCode);
 void ClearData(void);

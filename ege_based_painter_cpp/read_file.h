@@ -3,7 +3,7 @@
 #include "UI.h"
 #include "EGEEnvironmentController.h"
 
-extern struct ShapeData shapeData[512];
+// extern struct ShapeData shapeData[512];
 extern char fileValidityCheckSuffix;
 extern EGEEnvironmentController graphicsEnvironment;
 

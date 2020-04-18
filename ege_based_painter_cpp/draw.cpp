@@ -3,136 +3,144 @@ extern EGEEnvironmentController graphicsEnvironment;
 
 void DrawAllPrevShapes(bool withColor)
 {
-    int coordData[255] = { 0 }; // coordinate data used for polygon drawing
-
-    // stops if there is no shapes
-    if (g_nTotalShapes > 0)
+    if (shapeData.size() > 0)
     {
-        // draw shapes one by one
-        for (int i = 0; i < g_nTotalShapes; i++)
+        for (auto i : shapeData)
         {
-            // set foreground color and fill color
-            if (withColor)
-            {
-                setcolor(shapeData[i].foregroundColor);
+            i->Draw(withColor);
+        }
+    }
+    
+    //int coordData[255] = { 0 }; // coordinate data used for polygon drawing
 
-                if (shapeData[i].isFill)
-                {
-                    setfillcolor(shapeData[i].fillColor);
-                }
-                else
-                {
-                    setfillcolor(0xFFFFFF);
-                } // end of if
-            }
-            else
-            {
-                setcolor(0xCCCCCC);
-                setfillcolor(0xDDDDDD);
-            } // end of if
+    //// stops if there is no shapes
+    //if (g_nTotalShapes > 0)
+    //{
+    //    // draw shapes one by one
+    //    for (int i = 0; i < g_nTotalShapes; i++)
+    //    {
+    //        // set foreground color and fill color
+    //        if (withColor)
+    //        {
+    //            setcolor(shapeData[i].foregroundColor);
 
-            switch (shapeData[i].shapeType)
-            {
-            case SHAPE::shape_line:
-                    /*line(shapeData[i].coords[0].x,
-                        shapeData[i].coords[0].y,
-                        shapeData[i].coords[1].x,
-                        shapeData[i].coords[1].y);*/
-                    line(((shapeData + i)->coords)->x,
-                         ((shapeData + i)->coords)->y,
-                         ((shapeData + i)->coords + 1)->x,
-                         ((shapeData + i)->coords + 1)->y);
-                    break;
+    //            if (shapeData[i].isFill)
+    //            {
+    //                setfillcolor(shapeData[i].fillColor);
+    //            }
+    //            else
+    //            {
+    //                setfillcolor(0xFFFFFF);
+    //            } // end of if
+    //        }
+    //        else
+    //        {
+    //            setcolor(0xCCCCCC);
+    //            setfillcolor(0xDDDDDD);
+    //        } // end of if
 
-                case SHAPE::shape_circle:
+    //        switch (shapeData[i].shapeType)
+    //        {
+    //        case SHAPE::shape_line:
+    //                /*line(shapeData[i].coords[0].x,
+    //                    shapeData[i].coords[0].y,
+    //                    shapeData[i].coords[1].x,
+    //                    shapeData[i].coords[1].y);*/
+    //                line(((shapeData + i)->coords)->x,
+    //                     ((shapeData + i)->coords)->y,
+    //                     ((shapeData + i)->coords + 1)->x,
+    //                     ((shapeData + i)->coords + 1)->y);
+    //                break;
 
-                    /*circle(shapeData[i].coords[0].x,
-                           shapeData[i].coords[0].y,
-                           (int)sqrt(pow(shapeData[i].coords[0].x - shapeData[i].coords[1].x, 2) +
-                                     pow(shapeData[i].coords[0].y - shapeData[i].coords[1].y, 2)));*/
-                    if (shapeData[i].isFill)
-                    {
-                        pieslice(((shapeData + i)->coords)->x,
-                                 ((shapeData + i)->coords)->y,
-                                 0,
-                                 360,
-                                 (int)sqrt(pow(((shapeData + i)->coords)->x - ((shapeData + i)->coords + 1)->x,
-                                               2) +
-                                           pow(((shapeData + i)->coords)->y - ((shapeData + i)->coords + 1)->y, 2)));
-                    }
-                    else
-                    {
-                        circle(((shapeData + i)->coords)->x,
-                               ((shapeData + i)->coords)->y,
-                               (int)sqrt(pow(((shapeData + i)->coords)->x - ((shapeData + i)->coords + 1)->x,
-                                             2) +
-                                         pow(((shapeData + i)->coords)->y - ((shapeData + i)->coords + 1)->y, 2)));
-                    }
+    //            case SHAPE::shape_circle:
 
-                    break;
+    //                /*circle(shapeData[i].coords[0].x,
+    //                       shapeData[i].coords[0].y,
+    //                       (int)sqrt(pow(shapeData[i].coords[0].x - shapeData[i].coords[1].x, 2) +
+    //                                 pow(shapeData[i].coords[0].y - shapeData[i].coords[1].y, 2)));*/
+    //                if (shapeData[i].isFill)
+    //                {
+    //                    pieslice(((shapeData + i)->coords)->x,
+    //                             ((shapeData + i)->coords)->y,
+    //                             0,
+    //                             360,
+    //                             (int)sqrt(pow(((shapeData + i)->coords)->x - ((shapeData + i)->coords + 1)->x,
+    //                                           2) +
+    //                                       pow(((shapeData + i)->coords)->y - ((shapeData + i)->coords + 1)->y, 2)));
+    //                }
+    //                else
+    //                {
+    //                    circle(((shapeData + i)->coords)->x,
+    //                           ((shapeData + i)->coords)->y,
+    //                           (int)sqrt(pow(((shapeData + i)->coords)->x - ((shapeData + i)->coords + 1)->x,
+    //                                         2) +
+    //                                     pow(((shapeData + i)->coords)->y - ((shapeData + i)->coords + 1)->y, 2)));
+    //                }
 
-                case SHAPE::shape_rectangle:
-                    if (shapeData[i].isFill)
-                    {
-                        bar(((shapeData + i)->coords)->x,
-                            ((shapeData + i)->coords)->y,
-                            ((shapeData + i)->coords + 1)->x,
-                            ((shapeData + i)->coords + 1)->y);
-                    }
-                    else
-                    {
-                        rectangle(((shapeData + i)->coords)->x,
-                                  ((shapeData + i)->coords)->y,
-                                  ((shapeData + i)->coords + 1)->x,
-                                  ((shapeData + i)->coords + 1)->y);
-                    }
+    //                break;
 
-                    /*rectangle(((shapeData + i)->coords)->x,
-                        ((shapeData + i)->coords)->y,
-                        ((shapeData + i)->coords + 1)->x,
-                        ((shapeData + i)->coords + 1)->y);*/
-                    break;
+    //            case SHAPE::shape_rectangle:
+    //                if (shapeData[i].isFill)
+    //                {
+    //                    bar(((shapeData + i)->coords)->x,
+    //                        ((shapeData + i)->coords)->y,
+    //                        ((shapeData + i)->coords + 1)->x,
+    //                        ((shapeData + i)->coords + 1)->y);
+    //                }
+    //                else
+    //                {
+    //                    rectangle(((shapeData + i)->coords)->x,
+    //                              ((shapeData + i)->coords)->y,
+    //                              ((shapeData + i)->coords + 1)->x,
+    //                              ((shapeData + i)->coords + 1)->y);
+    //                }
 
-                case SHAPE::shape_polygon:
+    //                /*rectangle(((shapeData + i)->coords)->x,
+    //                    ((shapeData + i)->coords)->y,
+    //                    ((shapeData + i)->coords + 1)->x,
+    //                    ((shapeData + i)->coords + 1)->y);*/
+    //                break;
 
-                    //for (int j = 0; j < shapeData[i].extraData[0]; j++)
-                    //{
-                    //  coordData[2 * j] = shapeData[i].coords[j].x;
-                    //  coordData[2 * j + 1] = shapeData[i].coords[j].y;
-                    //}
-                    ////coordData[shapeData[i].extraData[0] * 2] = shapeData[i].coords[0].x;
-                    ////coordData[shapeData[i].extraData[0] * 2 + 1] = shapeData[i].coords[0].y;
-                    ////setfillcolor(0xAAAAAA);
-                    //fillpoly(shapeData[i].extraData[0], coordData);
+    //            case SHAPE::shape_polygon:
 
-                    // prepare the data in shapeData for drawing
-                    for (int j = 0; j < * ((shapeData + i)->extraData); j++)
-                    {
-                        *(coordData + 2 * j) = ((shapeData + i)->coords + j)->x;
-                        *(coordData + 2 * j + 1) = ((shapeData + i)->coords + j)->y;
-                    }
+    //                //for (int j = 0; j < shapeData[i].extraData[0]; j++)
+    //                //{
+    //                //  coordData[2 * j] = shapeData[i].coords[j].x;
+    //                //  coordData[2 * j + 1] = shapeData[i].coords[j].y;
+    //                //}
+    //                ////coordData[shapeData[i].extraData[0] * 2] = shapeData[i].coords[0].x;
+    //                ////coordData[shapeData[i].extraData[0] * 2 + 1] = shapeData[i].coords[0].y;
+    //                ////setfillcolor(0xAAAAAA);
+    //                //fillpoly(shapeData[i].extraData[0], coordData);
 
-                    *(coordData + 2 * (*((shapeData + i)->extraData))) = ((shapeData +
-                            i)->coords)->x;
-                    *(coordData + 2 * (*((shapeData + i)->extraData)) + 1) = ((
-                                shapeData + i)->coords)->y;
+    //                // prepare the data in shapeData for drawing
+    //                for (int j = 0; j < * ((shapeData + i)->extraData); j++)
+    //                {
+    //                    *(coordData + 2 * j) = ((shapeData + i)->coords + j)->x;
+    //                    *(coordData + 2 * j + 1) = ((shapeData + i)->coords + j)->y;
+    //                }
 
-                    if (shapeData[i].isFill)
-                    {
-                        fillpoly(*((shapeData + i)->extraData), coordData);
-                    }
-                    else
-                    {
-                        drawpoly(*((shapeData + i)->extraData) + 1, coordData);
-                    }
+    //                *(coordData + 2 * (*((shapeData + i)->extraData))) = ((shapeData +
+    //                        i)->coords)->x;
+    //                *(coordData + 2 * (*((shapeData + i)->extraData)) + 1) = ((
+    //                            shapeData + i)->coords)->y;
 
-                    break;
+    //                if (shapeData[i].isFill)
+    //                {
+    //                    fillpoly(*((shapeData + i)->extraData), coordData);
+    //                }
+    //                else
+    //                {
+    //                    drawpoly(*((shapeData + i)->extraData) + 1, coordData);
+    //                }
 
-                default:
-                    break;
-            } // end of switch
-        } // end of for
-    } // end of if
+    //                break;
+
+    //            default:
+    //                break;
+    //        } // end of switch
+    //    } // end of for
+    //} // end of if
 }
 
 color_t RandColor(void)
