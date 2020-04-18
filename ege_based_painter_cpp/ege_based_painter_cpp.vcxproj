@@ -164,6 +164,9 @@
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="mouse_draw.cpp" />
     <ClCompile Include="mouse_draw_circle.cpp" />
+    <ClCompile Include="mouse_draw_line.cpp" />
+    <ClCompile Include="mouse_draw_polygon.cpp" />
+    <ClCompile Include="mouse_draw_rectangle.cpp" />
     <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="read_file.cpp" />
     <ClCompile Include="Rectangle.cpp" />
@@ -184,6 +187,9 @@
     <ClInclude Include="menu.h" />
     <ClInclude Include="mouse_draw.h" />
     <ClInclude Include="mouse_draw_circle.h" />
+    <ClInclude Include="mouse_draw_line.h" />
+    <ClInclude Include="mouse_draw_polygon.h" />
+    <ClInclude Include="mouse_draw_rectangle.h" />
     <ClInclude Include="Polygon.h" />
     <ClInclude Include="read_file.h" />
     <ClInclude Include="Rectangle.h" />

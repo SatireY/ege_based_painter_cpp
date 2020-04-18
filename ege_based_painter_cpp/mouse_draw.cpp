@@ -321,8 +321,8 @@
 //    }
 //}
 
-void mouse_DrawLine(void)
-{
+//void mouse_DrawLine(void)
+//{
 //    const short int TOTAL_LN = 4;
 //    bool            isInProgress = false;
 //    int             lineStartPositionX;
@@ -550,7 +550,7 @@ void mouse_DrawLine(void)
 //                break;
 //        }
 //    }
-}
+//}
 
 void mouse_DrawRectangle(void)
 {

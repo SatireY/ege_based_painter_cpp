@@ -48,16 +48,32 @@ void Menu(bool readResult)
                         break;
 
                     case 3: // 清除所有图形
-                        ClearData();
-                        cleardevice();
-                        InitUI(0);
-                        delay_fps(REFRESH_RATE);
-                        MessageBox(NULL,
-                                   TEXT("已清除所有图形"),
-                                   TEXT("提示"),
-                                   MB_OK | MB_SYSTEMMODAL | MB_ICONINFORMATION);
+                        if (true)
+                        {
+                            int selection1 = MessageBox(NULL,
+                                TEXT("是否确定所有图形？此操作无法撤回。"),
+                                TEXT("提示"),
+                                MB_OKCANCEL | MB_SYSTEMMODAL | MB_ICONEXCLAMATION);
+
+                            if (selection1 == IDOK)
+                            {
+                                ClearData();
+                                cleardevice();
+                                InitUI(0);
+                                delay_fps(REFRESH_RATE);
+                                MessageBox(NULL,
+                                    TEXT("已清除所有图形"),
+                                    TEXT("提示"),
+                                    MB_OK | MB_SYSTEMMODAL | MB_ICONINFORMATION);
+
+                                goto move;
+                            }
+                            else if (selection1 == IDCANCEL)
+                            {
+                                break;
+                            }
+                        }
                         
-                        goto move;
                         break;
 
                     case 4: // 画线
