@@ -3,20 +3,20 @@
 #include "Shape.h"
 #include "draw.h"
 
-class Polygon :
+class myPolygon :
 	public Shape
 {
 public:
 	static                   int polygonCount;
 	Color*                   fillColor = new Color{};
 	int                      vertexCount;
-	std::vector <Coordinate> coords;
+	std::vector <int>        coords;
 	bool                     isFill;
 	void                     Draw(bool withColor) override;
-	Polygon();
-	Polygon(const std::vector <Coordinate> coords);
-	Polygon(const std::vector <Coordinate> coords, color_t outlineColor);
-	Polygon(const std::vector <Coordinate> coords, color_t outlineColor, color_t fillColor);
-	~Polygon();
+	myPolygon();
+	myPolygon(const std::vector <int> coords, int vertexCount);
+	myPolygon(const std::vector <int> coords, int vertexCount, color_t outlineColor);
+	myPolygon(const std::vector <int> coords, int vertexCount, color_t outlineColor, color_t fillColor);
+	~myPolygon();
 };
 

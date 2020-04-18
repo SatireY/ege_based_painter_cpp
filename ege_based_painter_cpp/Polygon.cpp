@@ -1,6 +1,6 @@
 #include "Polygon.h"
 
-void Polygon::Draw(bool withColor)
+void myPolygon::Draw(bool withColor)
 {
 	int coordData[50];
 
@@ -25,12 +25,12 @@ void Polygon::Draw(bool withColor)
 
 	for (int j = 0; j < vertexCount; j++)
 	{
-		coordData[2 * j] = coords[j].x;
-		coordData[2 * j + 1] = coords[j].y;
+		coordData[2 * j] = coords[2 * j];
+		coordData[2 * j + 1] = coords[2 * j + 1];
 	}
 
-	coordData[2 * vertexCount] = coords[0].x;
-	coordData[2 * vertexCount + 1] = coords[0].y;
+	coordData[2 * vertexCount] = coords[0];
+	coordData[2 * vertexCount + 1] = coords[1];
 
 	if (isFill)
 	{
@@ -42,40 +42,40 @@ void Polygon::Draw(bool withColor)
 	}
 }
 
-Polygon::Polygon()
+myPolygon::myPolygon()
 {
 	polygonCount++;
 }
 
-Polygon::Polygon(const std::vector <Coordinate> coords) : Polygon()
+myPolygon::myPolygon(const std::vector <int> coords, int vertexCount) : myPolygon()
 {
 	shapeType                = SHAPE::shape_polygon;
 	isFill                   = false;
 	outlineColor->colorValue = RandColor();
 	this->coords             = coords;
-	vertexCount              = coords.size() / 2;
+	this->vertexCount        = vertexCount;
 }
 
-Polygon::Polygon(const std::vector <Coordinate> coords, color_t outlineColor) : Polygon()
+myPolygon::myPolygon(const std::vector <int> coords, int vertexCount, color_t outlineColor) : myPolygon()
 {
 	shapeType                      = SHAPE::shape_polygon;
 	isFill                         = false;
 	this->outlineColor->colorValue = outlineColor;
 	this->coords                   = coords;
-	vertexCount                    = coords.size() / 2;
+	this->vertexCount              = vertexCount;
 }
 
-Polygon::Polygon(const std::vector <Coordinate> coords, color_t outlineColor, color_t fillColor) : Polygon()
+myPolygon::myPolygon(const std::vector <int> coords, int vertexCount, color_t outlineColor, color_t fillColor) : myPolygon()
 {
 	shapeType                      = SHAPE::shape_polygon;
 	isFill                         = true;
 	this->outlineColor->colorValue = outlineColor;
 	this->fillColor->colorValue    = fillColor;
 	this->coords                   = coords;
-	vertexCount                    = coords.size() / 2;
+	this->vertexCount              = vertexCount;
 }
 
-Polygon::~Polygon()
+myPolygon::~myPolygon()
 {
 	polygonCount--;
 	delete fillColor;

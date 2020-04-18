@@ -804,8 +804,8 @@ void mouse_DrawRectangle(void)
 //    }
 }
 
-void mouse_DrawPoly(void)
-{
+//void mouse_DrawPoly(void)
+//{
 //    const short int TOTAL_LN = 4; // total items in the menu bar
 //    bool            isInProgress = false;
 //    WORD            polyCoords[50];
@@ -1073,4 +1073,4 @@ void mouse_DrawPoly(void)
 //                break;
 //        }
 //    }
-}
+//}
