@@ -13,7 +13,7 @@ char                 fileValidityCheckSuffix = '\0';
 EGEEnvironmentController graphicsEnvironment{};
 int Shape::shapeCount         = 0;
 int Circle::circleCount       = 0;
-int Rectangle::rectangleCount = 0;
+int myRectangle::rectangleCount = 0;
 int Line::lineCount           = 0;
 int myPolygon::polygonCount     = 0;
 

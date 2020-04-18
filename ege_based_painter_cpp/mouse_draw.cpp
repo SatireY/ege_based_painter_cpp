@@ -552,8 +552,8 @@
 //    }
 //}
 
-void mouse_DrawRectangle(void)
-{
+//void mouse_DrawRectangle(void)
+//{
 //    const short int TOTAL_LN = 4; // total items in the menu bar
 //    bool            isInProgress = false;
 //    int             rectUpLCornerX;
@@ -802,7 +802,7 @@ void mouse_DrawRectangle(void)
 //                break;
 //        }
 //    }
-}
+//}
 
 //void mouse_DrawPoly(void)
 //{

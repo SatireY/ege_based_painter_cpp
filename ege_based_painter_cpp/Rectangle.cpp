@@ -1,6 +1,6 @@
 #include "Rectangle.h"
 
-void Rectangle::Draw(bool withColor)
+void myRectangle::Draw(bool withColor)
 {
 	// set foreground color and fill color
 	if (withColor)
@@ -38,12 +38,12 @@ void Rectangle::Draw(bool withColor)
 	}
 }
 
-Rectangle::Rectangle()
+myRectangle::myRectangle()
 {
 	rectangleCount++;
 }
 
-Rectangle::Rectangle(int x1, int y1, int x2, int y2) : Rectangle()
+myRectangle::myRectangle(int x1, int y1, int x2, int y2) : myRectangle()
 {
 	shapeType                = SHAPE::shape_rectangle;
 	isFill                   = false;
@@ -54,7 +54,7 @@ Rectangle::Rectangle(int x1, int y1, int x2, int y2) : Rectangle()
 	coords[1].y              = y2;
 }
 
-Rectangle::Rectangle(int x1, int y1, int x2, int y2, color_t outlineColor) : Rectangle()
+myRectangle::myRectangle(int x1, int y1, int x2, int y2, color_t outlineColor) : myRectangle()
 {
 	shapeType                      = SHAPE::shape_rectangle;
 	isFill                         = false;
@@ -65,7 +65,7 @@ Rectangle::Rectangle(int x1, int y1, int x2, int y2, color_t outlineColor) : Rec
 	coords[1].y                    = y2;
 }
 
-Rectangle::Rectangle(int x1, int y1, int x2, int y2, color_t outlineColor, color_t fillColor) : Rectangle()
+myRectangle::myRectangle(int x1, int y1, int x2, int y2, color_t outlineColor, color_t fillColor) : myRectangle()
 {
 	shapeType                      = SHAPE::shape_rectangle;
 	isFill                         = true;
@@ -77,7 +77,7 @@ Rectangle::Rectangle(int x1, int y1, int x2, int y2, color_t outlineColor, color
 	coords[1].y                    = y2;
 }
 
-Rectangle::~Rectangle()
+myRectangle::~myRectangle()
 {
 	rectangleCount--;
 }

@@ -4,7 +4,7 @@
 #include "Shape.h"
 #include "draw.h"
 
-class Rectangle :
+class myRectangle :
 	public Shape
 {
 public:
@@ -13,10 +13,10 @@ public:
 	Coordinate         coords[2];
 	bool               isFill;
 	void       Draw(bool withColor) override;
-	Rectangle();
-	Rectangle(int x1, int y1, int x2, int y2);
-	Rectangle(int x1, int y1, int x2, int y2, color_t outlineColor);
-	Rectangle(int x1, int y1, int x2, int y2, color_t outlineColor, color_t fillColor);
-	~Rectangle();
+	myRectangle();
+	myRectangle(int x1, int y1, int x2, int y2);
+	myRectangle(int x1, int y1, int x2, int y2, color_t outlineColor);
+	myRectangle(int x1, int y1, int x2, int y2, color_t outlineColor, color_t fillColor);
+	~myRectangle();
 };
 
