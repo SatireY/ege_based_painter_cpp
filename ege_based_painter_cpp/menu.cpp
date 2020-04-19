@@ -51,7 +51,7 @@ void Menu(bool readResult)
                         if (true)
                         {
                             int selection1 = MessageBox(NULL,
-                                                        TEXT("是否确定所有图形？此操作无法撤回。"),
+                                                        TEXT("是否确定清除所有图形？此操作无法撤回。"),
                                                         TEXT("提示"),
                                                         MB_OKCANCEL | MB_SYSTEMMODAL | MB_ICONEXCLAMATION);
 
