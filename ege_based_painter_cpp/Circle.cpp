@@ -37,11 +37,29 @@ void Circle::Draw(bool withColor)
     }
 }
 
+int Circle::getCircleCount()
+{
+    return Circle::circleCount;
+}
+
 Circle::Circle()
 {
     circleCount++;
 }
 
+Circle::Circle(const Circle& origShape)
+{
+    delete outlineColor;
+    outlineColor    = new Color{ origShape.outlineColor->colorValue };
+    this->shapeType = origShape.shapeType;
+
+    delete fillColor;
+    fillColor       = new Color{ origShape.fillColor->colorValue };
+    this->coords.x  = origShape.coords.x;
+    this->coords.y  = origShape.coords.y;
+    this->radius    = origShape.radius;
+    this->isFill    = origShape.isFill;
+}
 Circle::Circle(int x, int y, int radius) : Circle()
 {
     shapeType                = SHAPE::shape_circle;
@@ -76,6 +94,10 @@ Circle::Circle(int x, int y, int radius, color_t outlineColor,
 
 Circle::~Circle()
 {
-    circleCount--;
+    Circle::circleCount--;
+    Shape::shapeCount--;
+    delete outlineColor;
     delete fillColor;
+    setcolor(0x000000);
+    xyprintf(245 + 81, 582, "圆: %d", Circle::getCircleCount());
 }

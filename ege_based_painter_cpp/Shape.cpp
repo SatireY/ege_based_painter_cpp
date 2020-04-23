@@ -5,8 +5,8 @@ Shape::Shape()
     shapeCount++;
 }
 
-Shape::~Shape()
-{
-    shapeCount--;
-    delete outlineColor;
-}
+//virtual Shape::~Shape()
+//{
+//    shapeCount--;
+//    delete outlineColor;
+//}

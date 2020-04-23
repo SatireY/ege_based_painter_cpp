@@ -18,6 +18,6 @@ class Shape
         Color     *outlineColor = new Color{};
         virtual void Draw(bool withColor) = 0;
         Shape();
-        ~Shape();
+        virtual ~Shape() {};
 };
 

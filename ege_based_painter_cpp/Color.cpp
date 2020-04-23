@@ -5,6 +5,11 @@ Color::Color()
     this->colorValue = 0x0;
 }
 
+Color::Color(const Color& origColor)
+{
+    this->colorValue = origColor.colorValue;
+}
+
 Color::Color(color_t colorValue)
 {
     this->colorValue = colorValue;

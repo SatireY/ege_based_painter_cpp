@@ -3,63 +3,7 @@
 
 void InitUI(short int errCode)
 {
-    static WORD tmp_totalShapes;
-    static WORD nLines;
-    static WORD nCircles;
-    static WORD nRectangles;
-    static WORD nPolygons;
-
-    if (shapeData.size() > 0)
-    {
-        if (shapeData[0]->shapeCount >= 500)
-        {
-            setcolor(0xAA5050);
-            setfont(30, 0, graphicsEnvironment.GetFont());
-            xyprintf(graphicsEnvironment.GetMenuWidth() + 118, 400,
-                     "图形过多！即将溢出！请停止绘画并立即保存！");
-            setfont(graphicsEnvironment.GetFontSize(), 0, graphicsEnvironment.GetFont());
-        }
-    }
-
-
-    // count the number of each shape
-    //if (tmp_totalShapes != g_nTotalShapes)
-    //{
-    //    g_isFileEdited = true; // indicates whether the picture is edited
-
-    //    // initialize variables for counting
-    //    nLines = 0;
-    //    nCircles = 0;
-    //    nRectangles = 0;
-    //    nPolygons = 0;
-
-    //    for (int i = 0; i < g_nTotalShapes; i++)
-    //    {
-    //        switch (shapeData[i].shapeType)
-    //        {
-    //            case SHAPE::shape_line:
-    //                nLines++;
-    //                break;
-
-    //            case SHAPE::shape_circle:
-    //                nCircles++;
-    //                break;
-
-    //            case SHAPE::shape_rectangle:
-    //                nRectangles++;
-    //                break;
-
-    //            case SHAPE::shape_polygon:
-    //                nPolygons++;
-    //                break;
-
-    //            default:
-    //                break;
-    //        }
-    //    }
-    //}
-
-    //tmp_totalShapes = g_nTotalShapes;
+    static int tmp_totalShapes;
 
     //count the number of each shape
     if (shapeData.size() > 0)
@@ -67,44 +11,11 @@ void InitUI(short int errCode)
         if (tmp_totalShapes != shapeData[0]->shapeCount)
         {
             g_isFileEdited = true; // indicates whether the picture is edited
-
-            // initialize variables for counting
-            nLines = 0;
-            nCircles = 0;
-            nRectangles = 0;
-            nPolygons = 0;
-
-            for (int i = 0; i < shapeData[0]->shapeCount; i++)
-            {
-                switch (shapeData[i]->shapeType)
-                {
-                    case SHAPE::shape_line:
-                        nLines++;
-                        break;
-
-                    case SHAPE::shape_circle:
-                        nCircles++;
-                        break;
-
-                    case SHAPE::shape_rectangle:
-                        nRectangles++;
-                        break;
-
-                    case SHAPE::shape_polygon:
-                        nPolygons++;
-                        break;
-
-                    default:
-                        break;
-                }
-            }
         }
-
         tmp_totalShapes = shapeData[0]->shapeCount;
     }
 
-
-    // draw basic lines
+    // draw UI outlines
     setcaption("CC 画板");
     setcolor(0x909090);
     line(0, 579, 800, 579);
@@ -142,10 +53,14 @@ void InitUI(short int errCode)
     xyprintf(133 + 16, 582, "提示信息请看控制台");
 
     // display the number of each shape
-    xyprintf(203 + 81, 582, "线: %d", nLines);
+    /*xyprintf(203 + 81, 582, "线: %d", nLines);
     xyprintf(245 + 81, 582, "圆: %d", nCircles);
     xyprintf(287 + 81, 582, "矩形: %d", nRectangles);
-    xyprintf(343 + 81, 582, "多边形: %d", nPolygons);
+    xyprintf(343 + 81, 582, "多边形: %d", nPolygons);*/
+    xyprintf(245 + 81, 582, "圆: %d", Circle::getCircleCount());
+    xyprintf(203 + 81, 582, "线: %d", Line::getLineCount());
+    xyprintf(343 + 81, 582, "多边形: %d", myPolygon::getPolygonCount());
+    xyprintf(287 + 81, 582, "矩形: %d", myRectangle::getRectangleCount());
 
     // shhow the current color settings
     xyprintf(505, 582, "前景:");

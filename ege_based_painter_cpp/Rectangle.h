@@ -12,8 +12,10 @@ class myRectangle :
         Color             *fillColor = new Color{};
         Coordinate         coords[2];
         bool               isFill;
-        void       Draw(bool withColor) override;
+        void               Draw(bool withColor) override;
+        static int         getRectangleCount();
         myRectangle();
+        myRectangle(const myRectangle& origShape);
         myRectangle(int x1, int y1, int x2, int y2);
         myRectangle(int x1, int y1, int x2, int y2, color_t outlineColor);
         myRectangle(int x1, int y1, int x2, int y2, color_t outlineColor,

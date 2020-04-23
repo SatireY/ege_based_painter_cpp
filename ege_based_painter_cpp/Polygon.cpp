@@ -42,9 +42,27 @@ void myPolygon::Draw(bool withColor)
     }
 }
 
+int myPolygon::getPolygonCount()
+{
+    return myPolygon::polygonCount;
+}
+
 myPolygon::myPolygon()
 {
     polygonCount++;
+}
+
+myPolygon::myPolygon(const myPolygon& origShape)
+{
+    delete outlineColor;
+    outlineColor      = new Color{ origShape.outlineColor->colorValue };
+    this->shapeType   = origShape.shapeType;
+
+    delete fillColor;
+    fillColor         = new Color{ origShape.fillColor->colorValue };
+    this->vertexCount = origShape.vertexCount;
+    this->coords      = origShape.coords;
+    this->isFill      = origShape.isFill;
 }
 
 myPolygon::myPolygon(const std::vector <int> coords,
@@ -80,6 +98,10 @@ myPolygon::myPolygon(const std::vector <int> coords, int vertexCount,
 
 myPolygon::~myPolygon()
 {
-    polygonCount--;
+    myPolygon::polygonCount--;
     delete fillColor;
+    Shape::shapeCount--;
+    delete outlineColor;
+    setcolor(0x000000);
+    xyprintf(343 + 81, 582, "¶à±ßÐÎ: %d", myPolygon::getPolygonCount());
 }

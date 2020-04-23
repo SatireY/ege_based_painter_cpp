@@ -13,7 +13,9 @@ class myPolygon :
         std::vector <int>        coords;
         bool                     isFill;
         void                     Draw(bool withColor) override;
+        static int               getPolygonCount();
         myPolygon();
+        myPolygon(const myPolygon& origShape);
         myPolygon(const std::vector <int> coords, int vertexCount);
         myPolygon(const std::vector <int> coords, int vertexCount,
                   color_t outlineColor);

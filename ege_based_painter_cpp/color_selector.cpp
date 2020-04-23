@@ -11,16 +11,16 @@ int colorInf[7] = { 0x0000AA,   //BLUE
 
 void ChooseColor_EGE(WORD mode)
 {
-    const int       TOTAL_LN = 10 + mode;
+    const int       TOTAL_LN    = 10 + mode;
     bool            hasSetColor = false;
     int             tmp_x, tmp_y;
-    PIMAGE          img = newimage();
+    PIMAGE          img         = newimage();
 
     // variables used for color customization
-    const short int N_OF_NUMS_TO_READ = 3;
+    const short int N_OF_NUMS_TO_READ  = 3;
     const int       LEN_OF_STR_TO_READ = 11;
-    const int       INPUT_MIN = 0;
-    const int       INPUT_MAX = 255;
+    const int       INPUT_MIN          = 0;
+    const int       INPUT_MAX          = 255;
 
     // initialization of variables needed to read inputs
     char            str[LEN_OF_STR_TO_READ];

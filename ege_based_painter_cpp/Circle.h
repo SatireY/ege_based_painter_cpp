@@ -12,8 +12,10 @@ class Circle :
         Coordinate   coords;
         int          radius;
         bool         isFill;
-        void Draw(bool withColor) override;
+        void         Draw(bool withColor) override;
+        static int   getCircleCount();
         Circle();
+        Circle(const Circle &origShape);
         Circle(int x, int y, int radius);
         Circle(int x, int y, int radius, color_t outlineColor);
         Circle(int x, int y, int radius, color_t outlineColor, color_t fillColor);
