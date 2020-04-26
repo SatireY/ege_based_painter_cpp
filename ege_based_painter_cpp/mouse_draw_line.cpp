@@ -51,11 +51,20 @@ void mouse_DrawLine(void)
                     // store current color settings
                     if (!g_isUserSetColor)
                     {
-                        shapeData.push_back(new Line{ lineStartPositionX, lineStartPositionY, lineEndPositionX, lineEndPositionY });
+                        shapeData.push_back(new Line{ 
+                            lineStartPositionX, 
+                            lineStartPositionY, 
+                            lineEndPositionX, 
+                            lineEndPositionY });
                     }
                     else
                     {
-                        shapeData.push_back(new Line{ lineStartPositionX, lineStartPositionY, lineEndPositionX, lineEndPositionY, g_customColor });
+                        shapeData.push_back(new Line{ 
+                            lineStartPositionX, 
+                            lineStartPositionY, 
+                            lineEndPositionX, 
+                            lineEndPositionY, 
+                            g_customColor });
                     }
 
                     DrawAllPrevShapes(true);

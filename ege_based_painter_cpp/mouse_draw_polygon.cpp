@@ -123,7 +123,9 @@ void mouse_DrawPoly(void)
                             if (!g_isUserSetFillColor)
                             {
                                 // shapeData[g_nTotalShapes - 1].isFill = false;
-                                shapeData.push_back(new myPolygon{ v_polyCoords, sides });
+                                shapeData.push_back(new myPolygon{ 
+                                    v_polyCoords, 
+                                    sides });
                             }
                             else
                             {
@@ -132,12 +134,20 @@ void mouse_DrawPoly(void)
                                 if (g_isFillColorRandom)
                                 {
                                     // shapeData[g_nTotalShapes - 1].fillColor = RandColor();
-                                    shapeData.push_back(new myPolygon{ v_polyCoords, sides, RandColor(), RandColor() });
+                                    shapeData.push_back(new myPolygon{
+                                        v_polyCoords,
+                                        sides, 
+                                        RandColor(), 
+                                        RandColor() });
                                 }
                                 else
                                 {
                                     // shapeData[g_nTotalShapes - 1].fillColor = g_customFillColor;
-                                    shapeData.push_back(new myPolygon{ v_polyCoords, sides, RandColor(), g_customFillColor });
+                                    shapeData.push_back(new myPolygon{
+                                        v_polyCoords, 
+                                        sides,
+                                        RandColor(),
+                                        g_customFillColor });
                                 }
                             }
                         }
@@ -148,7 +158,10 @@ void mouse_DrawPoly(void)
                             if (!g_isUserSetFillColor)
                             {
                                 // shapeData[g_nTotalShapes - 1].isFill = false;
-                                shapeData.push_back(new myPolygon{ v_polyCoords, sides, g_customColor });
+                                shapeData.push_back(new myPolygon{ 
+                                    v_polyCoords,
+                                    sides, 
+                                    g_customColor });
                             }
                             else
                             {
@@ -157,12 +170,20 @@ void mouse_DrawPoly(void)
                                 if (g_isFillColorRandom)
                                 {
                                     // shapeData[g_nTotalShapes - 1].fillColor = RandColor();
-                                    shapeData.push_back(new myPolygon{ v_polyCoords, sides, g_customColor, RandColor() });
+                                    shapeData.push_back(new myPolygon{
+                                        v_polyCoords, 
+                                        sides, 
+                                        g_customColor,
+                                        RandColor() });
                                 }
                                 else
                                 {
                                     // shapeData[g_nTotalShapes - 1].fillColor = g_customFillColor;
-                                    shapeData.push_back(new myPolygon{ v_polyCoords, sides, g_customColor, g_customFillColor });
+                                    shapeData.push_back(new myPolygon{ 
+                                        v_polyCoords,
+                                        sides, 
+                                        g_customColor,
+                                        g_customFillColor });
                                 }
                             }
                         }

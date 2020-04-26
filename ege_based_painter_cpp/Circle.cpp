@@ -99,5 +99,5 @@ Circle::~Circle()
     delete outlineColor;
     delete fillColor;
     setcolor(0x000000);
-    xyprintf(245 + 81, 582, "圆: %d", Circle::getCircleCount());
+    xyprintf(245 + 81, 582, "Բ: %d", Circle::getCircleCount());
 }

@@ -86,7 +86,11 @@ void mouse_DrawRectangle(void)
                         if (!g_isUserSetFillColor)
                         {
                             // shapeData[g_nTotalShapes - 1].isFill = false;
-                            shapeData.push_back(new myRectangle{ rectUpLCornerX, rectUpLCornerY, rectLowRCornerX, rectLowRCornerY });
+                            shapeData.push_back(new myRectangle{ 
+                                rectUpLCornerX, 
+                                rectUpLCornerY, 
+                                rectLowRCornerX, 
+                                rectLowRCornerY });
                         }
                         else
                         {
@@ -95,12 +99,24 @@ void mouse_DrawRectangle(void)
                             if (g_isFillColorRandom)
                             {
                                 // shapeData[g_nTotalShapes - 1].fillColor = RandColor();
-                                shapeData.push_back(new myRectangle{ rectUpLCornerX, rectUpLCornerY, rectLowRCornerX, rectLowRCornerY, RandColor(), RandColor() });
+                                shapeData.push_back(new myRectangle{ 
+                                    rectUpLCornerX, 
+                                    rectUpLCornerY, 
+                                    rectLowRCornerX, 
+                                    rectLowRCornerY, 
+                                    RandColor(), 
+                                    RandColor() });
                             }
                             else
                             {
                                 // shapeData[g_nTotalShapes - 1].fillColor = g_customFillColor;
-                                shapeData.push_back(new myRectangle{ rectUpLCornerX, rectUpLCornerY, rectLowRCornerX, rectLowRCornerY, RandColor(), g_customFillColor });
+                                shapeData.push_back(new myRectangle{ 
+                                    rectUpLCornerX, 
+                                    rectUpLCornerY, 
+                                    rectLowRCornerX, 
+                                    rectLowRCornerY, 
+                                    RandColor(), 
+                                    g_customFillColor });
                             }
                         }
                     }
@@ -111,7 +127,12 @@ void mouse_DrawRectangle(void)
                         if (!g_isUserSetFillColor)
                         {
                             // shapeData[g_nTotalShapes - 1].isFill = false;
-                            shapeData.push_back(new myRectangle{ rectUpLCornerX, rectUpLCornerY, rectLowRCornerX, rectLowRCornerY, g_customColor });
+                            shapeData.push_back(new myRectangle{ 
+                                rectUpLCornerX, 
+                                rectUpLCornerY, 
+                                rectLowRCornerX, 
+                                rectLowRCornerY, 
+                                g_customColor });
                         }
                         else
                         {
@@ -120,12 +141,24 @@ void mouse_DrawRectangle(void)
                             if (g_isFillColorRandom)
                             {
                                 // shapeData[g_nTotalShapes - 1].fillColor = RandColor();
-                                shapeData.push_back(new myRectangle{ rectUpLCornerX, rectUpLCornerY, rectLowRCornerX, rectLowRCornerY, g_customColor, RandColor() });
+                                shapeData.push_back(new myRectangle{ 
+                                    rectUpLCornerX, 
+                                    rectUpLCornerY, 
+                                    rectLowRCornerX, 
+                                    rectLowRCornerY,
+                                    g_customColor, 
+                                    RandColor() });
                             }
                             else
                             {
                                 // shapeData[g_nTotalShapes - 1].fillColor = g_customFillColor;
-                                shapeData.push_back(new myRectangle{ rectUpLCornerX, rectUpLCornerY, rectLowRCornerX, rectLowRCornerY, g_customColor, g_customFillColor });
+                                shapeData.push_back(new myRectangle{ 
+                                    rectUpLCornerX, 
+                                    rectUpLCornerY,
+                                    rectLowRCornerX, 
+                                    rectLowRCornerY, 
+                                    g_customColor, 
+                                    g_customFillColor });
                             }
                         }
                     }

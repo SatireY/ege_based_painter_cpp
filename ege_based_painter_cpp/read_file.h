@@ -5,7 +5,7 @@
 
 // extern struct ShapeData shapeData[512];
 extern char fileValidityCheckSuffix;
-extern EGEEnvironmentController graphicsEnvironment;
+extern      EGEEnvironmentController graphicsEnvironment;
 
 bool ReadFromFile(void);
 void TCHARToChar(const TCHAR *tchar, char *_char);

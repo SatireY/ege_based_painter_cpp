@@ -10,16 +10,16 @@
 
 // extern WORD   g_nTotalShapes;
 // extern struct ShapeData shapeData[512];
-extern bool   g_isFileEdited;
-extern bool
-g_isUserSetColor; // global variable. used to determine whether the user has set a custom color
-extern bool   g_isUserSetFillColor;
-extern bool   g_isFillColorRandom;
-extern color_t    g_customColor;
-extern color_t    g_customFillColor;
+extern bool                     g_isFileEdited;
+// global variable. used to determine whether the user has set a custom color
+extern bool                     g_isUserSetColor; 
+extern bool                     g_isUserSetFillColor;
+extern bool                     g_isFillColorRandom;
+extern color_t                  g_customColor;
+extern color_t                  g_customFillColor;
 extern EGEEnvironmentController graphicsEnvironment;
 
-extern std::vector <Shape *> shapeData;
+extern std::vector <Shape *>    shapeData;
 //extern int shapeCount;
 //extern int circleCount;
 //extern int rectangleCount;

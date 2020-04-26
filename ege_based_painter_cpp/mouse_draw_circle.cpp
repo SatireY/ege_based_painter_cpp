@@ -62,7 +62,10 @@ void mouse_DrawCircle(void)
                         if (!g_isUserSetFillColor)
                         {
                             // shapeData[g_nTotalShapes - 1].isFill = false;
-                            shapeData.push_back(new Circle{ circleCenterX, circleCenterY, static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                            shapeData.push_back(new Circle{
+                                circleCenterX, 
+                                circleCenterY, 
+                                static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
                                                             pow(circleCenterY - circleOuterY, 2))) });
                         }
                         else
@@ -72,14 +75,24 @@ void mouse_DrawCircle(void)
                             if (g_isFillColorRandom)
                             {
                                 // shapeData[g_nTotalShapes - 1].fillColor = RandColor();
-                                shapeData.push_back(new Circle{ circleCenterX, circleCenterY, static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
-                                                                pow(circleCenterY - circleOuterY, 2))), RandColor(), RandColor() });
+                                shapeData.push_back(new Circle{
+                                    circleCenterX, 
+                                    circleCenterY, 
+                                    static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                                                                pow(circleCenterY - circleOuterY, 2))), 
+                                    RandColor(), 
+                                    RandColor() });
                             }
                             else
                             {
                                 // shapeData[g_nTotalShapes - 1].fillColor = g_customFillColor;
-                                shapeData.push_back(new Circle{ circleCenterX, circleCenterY, static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
-                                                                pow(circleCenterY - circleOuterY, 2))), RandColor(), g_customFillColor });
+                                shapeData.push_back(new Circle{ 
+                                    circleCenterX, 
+                                    circleCenterY, 
+                                    static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                                                                pow(circleCenterY - circleOuterY, 2))), 
+                                    RandColor(), 
+                                    g_customFillColor });
                             }
                         }
                     }
@@ -90,8 +103,12 @@ void mouse_DrawCircle(void)
                         if (!g_isUserSetFillColor)
                         {
                             // shapeData[g_nTotalShapes - 1].isFill = false;
-                            shapeData.push_back(new Circle{ circleCenterX, circleCenterY, static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
-                                                            pow(circleCenterY - circleOuterY, 2))), g_customColor });
+                            shapeData.push_back(new Circle{ 
+                                circleCenterX, 
+                                circleCenterY, 
+                                static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                                                            pow(circleCenterY - circleOuterY, 2))), 
+                                g_customColor });
                         }
                         else
                         {
@@ -100,14 +117,24 @@ void mouse_DrawCircle(void)
                             if (g_isFillColorRandom)
                             {
                                 // shapeData[g_nTotalShapes - 1].fillColor = RandColor();
-                                shapeData.push_back(new Circle{ circleCenterX, circleCenterY, static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
-                                                                pow(circleCenterY - circleOuterY, 2))), g_customColor, RandColor() });
+                                shapeData.push_back(new Circle{ 
+                                    circleCenterX, 
+                                    circleCenterY, 
+                                    static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                                                                pow(circleCenterY - circleOuterY, 2))), 
+                                    g_customColor, 
+                                    RandColor() });
                             }
                             else
                             {
                                 // shapeData[g_nTotalShapes - 1].fillColor = g_customFillColor;
-                                shapeData.push_back(new Circle{ circleCenterX, circleCenterY, static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
-                                                                pow(circleCenterY - circleOuterY, 2))), g_customColor, g_customFillColor });
+                                shapeData.push_back(new Circle{
+                                    circleCenterX, 
+                                    circleCenterY, 
+                                    static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                                                                pow(circleCenterY - circleOuterY, 2))), 
+                                    g_customColor, 
+                                    g_customFillColor });
                             }
                         }
                     }

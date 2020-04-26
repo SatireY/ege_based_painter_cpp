@@ -13,11 +13,11 @@ enum class SHAPE
 class Shape
 {
     public:
-        static     int shapeCount;
-        SHAPE      shapeType;
-        Color     *outlineColor = new Color{};
+        static       int shapeCount;
+        SHAPE        shapeType;
+        Color       *outlineColor = new Color{};
         virtual void Draw(bool withColor) = 0;
         Shape();
-        virtual ~Shape() {};
+        virtual      ~Shape() {};
 };
 
