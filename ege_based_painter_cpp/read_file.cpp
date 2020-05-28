@@ -10,7 +10,7 @@ int ReadFromFile(void)
     OPENFILENAME    ofn                     = { 0 };
     TCHAR           strFilename[MAX_PATH]   = { 0 };
     char            c_strFilename[MAX_PATH] = { 0 };
-    int             shapeID;
+    int             shapeID                 = 0;
     int             dataBuffer[256]         = { 0 };
 begin:
     cleardevice();
@@ -156,7 +156,8 @@ READINGFAILED:
                                                 saveFileStream >> dataBuffer[j];
                                             }
 
-                                            dataBuffer[dataBuffer[0] * 2 + 1] = dataBuffer[1];
+                                            // close polygon
+                                            dataBuffer[dataBuffer[0] * 2 + 1] = dataBuffer[1]; 
                                             dataBuffer[dataBuffer[0] * 2 + 2] = dataBuffer[2];
 
                                             saveFileStream >> dataBuffer[dataBuffer[0] * 2 + 3]; // outline color
@@ -196,6 +197,7 @@ READINGFAILED:
                                             if (dataBuffer[5]) // filled
                                             {
                                                 saveFileStream >> dataBuffer[6];
+
                                                 shapeData.push_back(new myRectangle
                                                 {
                                                     dataBuffer[0],
@@ -220,6 +222,38 @@ READINGFAILED:
 
                                         default:
                                             break;
+                                    }
+
+                                    if (saveFileStream.fail())
+                                    {
+                                        int selection = MessageBox(NULL,
+                                                                   TEXT("发现非法数据，请检查文件合法性！"),
+                                                                   TEXT("读取错误！"),
+                                                                   MB_ABORTRETRYIGNORE | MB_SYSTEMMODAL | MB_ICONEXCLAMATION);
+
+                                        switch (selection)
+                                        {
+                                            case IDRETRY:
+                                                goto case1;
+                                                break;
+
+                                            case IDABORT:
+                                                exit(1);
+                                                break;
+
+                                            case IDIGNORE:
+                                                for (auto i : shapeData)
+                                                {
+                                                    delete i;
+                                                    shapeData.pop_back();
+                                                }
+
+                                                return 0;
+                                                break;
+
+                                            default:
+                                                break;
+                                        }
                                     }
                                 }
 
@@ -299,7 +333,6 @@ READINGFAILED:
     InitUI(0);
     g_isFileEdited = false;
     return readResult;
-
 }
 
 

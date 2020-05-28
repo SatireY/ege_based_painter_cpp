@@ -4,6 +4,7 @@
 #include <filesystem>
 #include <fstream>
 #include <typeinfo>
+#include <cstdlib>
 
 extern WORD       g_nTotalShapes;
 extern char       fileValidityCheckSuffix;
