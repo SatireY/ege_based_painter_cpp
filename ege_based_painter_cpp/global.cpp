@@ -9,6 +9,7 @@ color_t              g_customFillColor               = 0x0;
 //                   WORD             g_nTotalShapes = 0;
 bool                 g_isFileEdited                  = false;
 char                 fileValidityCheckSuffix         = '\0';
+char                 DELIMITER_SPACE                 = ' ';
 
 EGEEnvironmentController graphicsEnvironment{};
 int Shape::shapeCount           = 0;
@@ -18,4 +19,4 @@ int Line::lineCount             = 0;
 int myPolygon::polygonCount     = 0;
 
 
-std::vector <Shape *> shapeData;
+std::vector <Shape *> shapeData; // the vector that stores all the shapes

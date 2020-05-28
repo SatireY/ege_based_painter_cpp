@@ -29,12 +29,12 @@ Line::Line()
     lineCount++;
 }
 
-Line::Line(const Line &origShape)
+Line::Line(const Line& origShape)
 {
     delete outlineColor;
     outlineColor      = new Color{ origShape.outlineColor->colorValue };
     this->shapeType   = origShape.shapeType;
-
+  
     this->coords[0].x = origShape.coords[0].x;
     this->coords[0].y = origShape.coords[0].y;
     this->coords[1].x = origShape.coords[1].x;

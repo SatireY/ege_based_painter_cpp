@@ -12,7 +12,6 @@ void InitUI(short int errCode)
         {
             g_isFileEdited = true; // indicates whether the picture is edited
         }
-
         tmp_totalShapes = shapeData[0]->shapeCount;
     }
 

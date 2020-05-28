@@ -6,7 +6,7 @@ class Color
     public:
         color_t colorValue;
         Color();
-        Color(const Color &origColor);
+        Color(const Color& origColor);
         Color(color_t colorValue);
         Color(int R, int G, int B);
         color_t setColorValue(color_t colorValue);

@@ -12,7 +12,7 @@
 // extern struct ShapeData shapeData[512];
 extern bool                     g_isFileEdited;
 // global variable. used to determine whether the user has set a custom color
-extern bool                     g_isUserSetColor;
+extern bool                     g_isUserSetColor; 
 extern bool                     g_isUserSetFillColor;
 extern bool                     g_isFillColorRandom;
 extern color_t                  g_customColor;

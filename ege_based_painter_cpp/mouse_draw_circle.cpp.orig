@@ -1,18 +1,18 @@
-#include "mouse_draw_rectangle.h"
+#include "mouse_draw_circle.h"
 
-void mouse_DrawRectangle(void)
+void mouse_DrawCircle(void)
 {
     const short int TOTAL_LN = 4; // total items in the menu bar
+    // To determine whether the mouse click is the first step or the second step
     bool            isInProgress = false;
-    int             rectUpLCornerX;
-    int             rectUpLCornerY;
-    int             rectLowRCornerX;
-    int             rectLowRCornerY;
+    int             circleCenterX;
+    int             circleCenterY;
+    int             circleOuterX;
+    int             circleOuterY;
 
-    printf("已进入鼠标画矩形模式\n");
+    printf("已进入鼠标画圆模式\n");
     printf("操作指南：\n");
-    printf("用鼠标点选两个对角点即可连续画矩形\n");
-    //setcolor(0x909090);
+    printf("用鼠标先点选圆心再点选圆上任意一点即可连续画圆\n");
     DrawAllPrevShapes(true);
     DrawMenuOutline(1, TOTAL_LN, 1);
     setcolor(0x000000);
@@ -29,56 +29,32 @@ void mouse_DrawRectangle(void)
         {
             case mouse_msg_up:
 
-                /* if the mouse click indicates the second dot,
-                store the position data of the lower rignt corner */
+                /* if the mouse click indicates the first dot,
+                store the position data of another dot on the circle */
                 if (isInProgress)
                 {
-                    if (msg.x == rectUpLCornerX || msg.y == rectUpLCornerY)
+                    if (msg.x == circleCenterX || msg.y == circleCenterY)
                     {
                         continue;
                     }
 
-                    rectLowRCornerX = msg.x;
-                    rectLowRCornerY = msg.y;
+                    circleOuterX = msg.x;
+                    circleOuterY = msg.y;
 
-                    printf("	您已选中点 (%d, %d)\n", rectLowRCornerX, rectLowRCornerY);
+                    printf("	您已选中圆上一点 (%d, %d)\n", circleOuterX, circleOuterY);
 
                     // store coordinate data
                     /*g_nTotalShapes++;
-                    shapeData[g_nTotalShapes - 1].shapeType = SHAPE::shape_rectangle;
-                    shapeData[g_nTotalShapes - 1].coords[0].x = rectUpLCornerX;
-                    shapeData[g_nTotalShapes - 1].coords[0].y = rectUpLCornerY;
-                    shapeData[g_nTotalShapes - 1].coords[1].x = rectLowRCornerX;
-                    shapeData[g_nTotalShapes - 1].coords[1].y = rectLowRCornerY;*/
+                    shapeData[g_nTotalShapes - 1].shapeType = SHAPE::shape_circle;
+                    shapeData[g_nTotalShapes - 1].coords[0].x = circleCenterX;
+                    shapeData[g_nTotalShapes - 1].coords[0].y = circleCenterY;
+                    shapeData[g_nTotalShapes - 1].coords[1].x = circleOuterX;
+                    shapeData[g_nTotalShapes - 1].coords[1].y = circleOuterY;*/
 
-                    //// store current color settings
-                    //if (!g_isUserSetColor)
-                    //{
-                    //    shapeData[g_nTotalShapes - 1].foregroundColor = RandColor();
-                    //}
-                    //else
-                    //{
-                    //    shapeData[g_nTotalShapes - 1].foregroundColor = g_customColor;
-                    //} // end of if
+                    /*shapeData.push_back(new Circle{ circleCenterX, circleCenterY, static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                                                        pow(circleCenterY - circleOuterY, 2))) });*/
 
-                    //if (!g_isUserSetFillColor)
-                    //{
-                    //    shapeData[g_nTotalShapes - 1].isFill = false;
-                    //}
-                    //else
-                    //{
-                    //    shapeData[g_nTotalShapes - 1].isFill = true;
-
-                    //    if (g_isFillColorRandom)
-                    //    {
-                    //        shapeData[g_nTotalShapes - 1].fillColor = RandColor();
-                    //    }
-                    //    else
-                    //    {
-                    //        shapeData[g_nTotalShapes - 1].fillColor = g_customFillColor;
-                    //    } // end of if
-                    //} // end of if
-
+                    // store current color settings
                     if (!g_isUserSetColor)
                     {
                         /*shapeData.push_back(new Circle{ circleCenterX, circleCenterY, static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
@@ -86,12 +62,11 @@ void mouse_DrawRectangle(void)
                         if (!g_isUserSetFillColor)
                         {
                             // shapeData[g_nTotalShapes - 1].isFill = false;
-                            shapeData.push_back(new myRectangle
-                            {
-                                rectUpLCornerX,
-                                rectUpLCornerY,
-                                rectLowRCornerX,
-                                rectLowRCornerY });
+                            shapeData.push_back(new Circle{
+                                circleCenterX, 
+                                circleCenterY, 
+                                static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                                                            pow(circleCenterY - circleOuterY, 2))) });
                         }
                         else
                         {
@@ -100,25 +75,23 @@ void mouse_DrawRectangle(void)
                             if (g_isFillColorRandom)
                             {
                                 // shapeData[g_nTotalShapes - 1].fillColor = RandColor();
-                                shapeData.push_back(new myRectangle
-                                {
-                                    rectUpLCornerX,
-                                    rectUpLCornerY,
-                                    rectLowRCornerX,
-                                    rectLowRCornerY,
-                                    RandColor(),
+                                shapeData.push_back(new Circle{
+                                    circleCenterX, 
+                                    circleCenterY, 
+                                    static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                                                                pow(circleCenterY - circleOuterY, 2))), 
+                                    RandColor(), 
                                     RandColor() });
                             }
                             else
                             {
                                 // shapeData[g_nTotalShapes - 1].fillColor = g_customFillColor;
-                                shapeData.push_back(new myRectangle
-                                {
-                                    rectUpLCornerX,
-                                    rectUpLCornerY,
-                                    rectLowRCornerX,
-                                    rectLowRCornerY,
-                                    RandColor(),
+                                shapeData.push_back(new Circle{ 
+                                    circleCenterX, 
+                                    circleCenterY, 
+                                    static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                                                                pow(circleCenterY - circleOuterY, 2))), 
+                                    RandColor(), 
                                     g_customFillColor });
                             }
                         }
@@ -130,12 +103,11 @@ void mouse_DrawRectangle(void)
                         if (!g_isUserSetFillColor)
                         {
                             // shapeData[g_nTotalShapes - 1].isFill = false;
-                            shapeData.push_back(new myRectangle
-                            {
-                                rectUpLCornerX,
-                                rectUpLCornerY,
-                                rectLowRCornerX,
-                                rectLowRCornerY,
+                            shapeData.push_back(new Circle{ 
+                                circleCenterX, 
+                                circleCenterY, 
+                                static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                                                            pow(circleCenterY - circleOuterY, 2))), 
                                 g_customColor });
                         }
                         else
@@ -145,37 +117,60 @@ void mouse_DrawRectangle(void)
                             if (g_isFillColorRandom)
                             {
                                 // shapeData[g_nTotalShapes - 1].fillColor = RandColor();
-                                shapeData.push_back(new myRectangle
-                                {
-                                    rectUpLCornerX,
-                                    rectUpLCornerY,
-                                    rectLowRCornerX,
-                                    rectLowRCornerY,
-                                    g_customColor,
+                                shapeData.push_back(new Circle{ 
+                                    circleCenterX, 
+                                    circleCenterY, 
+                                    static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                                                                pow(circleCenterY - circleOuterY, 2))), 
+                                    g_customColor, 
                                     RandColor() });
                             }
                             else
                             {
                                 // shapeData[g_nTotalShapes - 1].fillColor = g_customFillColor;
-                                shapeData.push_back(new myRectangle
-                                {
-                                    rectUpLCornerX,
-                                    rectUpLCornerY,
-                                    rectLowRCornerX,
-                                    rectLowRCornerY,
-                                    g_customColor,
+                                shapeData.push_back(new Circle{
+                                    circleCenterX, 
+                                    circleCenterY, 
+                                    static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                                                                pow(circleCenterY - circleOuterY, 2))), 
+                                    g_customColor, 
                                     g_customFillColor });
                             }
                         }
                     }
 
+                    //if (!g_isUserSetFillColor)
+                    //{
+                    //    // shapeData[g_nTotalShapes - 1].isFill = false;
+                    //}
+                    //else
+                    //{
+                    //    // shapeData[g_nTotalShapes - 1].isFill = true;
+
+                    //    if (g_isFillColorRandom)
+                    //    {
+                    //        // shapeData[g_nTotalShapes - 1].fillColor = RandColor();
+                    //        shapeData.push_back(new Circle{ circleCenterX, circleCenterY, static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                    //                                    pow(circleCenterY - circleOuterY, 2))) });
+                    //    }
+                    //    else
+                    //    {
+                    //        // shapeData[g_nTotalShapes - 1].fillColor = g_customFillColor;
+                    //        shapeData.push_back(new Circle{ circleCenterX, circleCenterY, static_cast<int>(sqrt(pow(circleCenterX - circleOuterX, 2) +
+                    //                                    pow(circleCenterY - circleOuterY, 2))) });
+                    //    }
+                    //}
+
                     DrawAllPrevShapes(true);
 
-                    printf("	已画出以 (%d, %d) 和 (%d, %d) 为对角点的一个矩形\n",
-                           rectUpLCornerX,
-                           rectUpLCornerY,
-                           rectLowRCornerX,
-                           rectLowRCornerY);
+                    printf("	已画出以 (%d, %d) 为圆心，(%d, %d) 为圆上一点，半径为 %d 的一个圆\n",
+                           circleCenterX,
+                           circleCenterY,
+                           circleOuterX,
+                           circleOuterY,
+                           (int)sqrt(pow(circleCenterX -
+                                         circleOuterX, 2) +
+                                     pow(circleCenterY - circleOuterY, 2)));
 
                     isInProgress = false;
                     goto move;
@@ -192,6 +187,15 @@ void mouse_DrawRectangle(void)
                         break;
 
                     case 2: // undo
+
+                        /*if (g_nTotalShapes > 0)
+                        {
+                            if (!isInProgress)
+                            {
+                                g_nTotalShapes--;
+                            }
+                        }*/
+
                         if (shapeData.size() > 0)
                         {
                             if (!isInProgress)
@@ -236,20 +240,20 @@ void mouse_DrawRectangle(void)
                 }
 
                 /* if the mouse click indicates the first dot,
-                store the position data of the upper left corner */
+                store the position data of the center of the circle */
                 if (!isInProgress)
                 {
-                    rectUpLCornerX = msg.x;
-                    rectUpLCornerY = msg.y;
+                    circleCenterX = msg.x;
+                    circleCenterY = msg.y;
 
                     // print a big dot
-                    putpixel(rectUpLCornerX, rectUpLCornerY, 0x707000);
-                    putpixel(rectUpLCornerX + 1, rectUpLCornerY, 0x707000);
-                    putpixel(rectUpLCornerX - 1, rectUpLCornerY, 0x707000);
-                    putpixel(rectUpLCornerX, rectUpLCornerY + 1, 0x707000);
-                    putpixel(rectUpLCornerX, rectUpLCornerY - 1, 0x707000);
+                    putpixel(circleCenterX, circleCenterY, 0x707000);
+                    putpixel(circleCenterX + 1, circleCenterY, 0x707000);
+                    putpixel(circleCenterX - 1, circleCenterY, 0x707000);
+                    putpixel(circleCenterX, circleCenterY + 1, 0x707000);
+                    putpixel(circleCenterX, circleCenterY - 1, 0x707000);
 
-                    printf("	您已选中点 (%d, %d)\n", rectUpLCornerX, rectUpLCornerY);
+                    printf("	您已选中圆心 (%d, %d)\n", circleCenterX, circleCenterY);
 
                     isInProgress = true;
                     break;
@@ -319,11 +323,11 @@ move:
                     setcolor(0x50AA50);
                     xyprintf(678, 582, "当前坐标: (%03d, %03d)", msg.x, msg.y);
 
-                    putpixel(rectUpLCornerX, rectUpLCornerY, 0x707000);
-                    putpixel(rectUpLCornerX + 1, rectUpLCornerY, 0x707000);
-                    putpixel(rectUpLCornerX - 1, rectUpLCornerY, 0x707000);
-                    putpixel(rectUpLCornerX, rectUpLCornerY + 1, 0x707000);
-                    putpixel(rectUpLCornerX, rectUpLCornerY - 1, 0x707000);
+                    putpixel(circleCenterX, circleCenterY, 0x707000);
+                    putpixel(circleCenterX + 1, circleCenterY, 0x707000);
+                    putpixel(circleCenterX - 1, circleCenterY, 0x707000);
+                    putpixel(circleCenterX, circleCenterY + 1, 0x707000);
+                    putpixel(circleCenterX, circleCenterY - 1, 0x707000);
                     putpixel(msg.x, msg.y, 0x707000);
                     putpixel(msg.x + 1, msg.y, 0x707000);
                     putpixel(msg.x - 1, msg.y, 0x707000);
@@ -332,7 +336,9 @@ move:
                     DrawAllPrevShapes(true);
                     setcolor(0x909090);
 
-                    rectangle(rectUpLCornerX, rectUpLCornerY, msg.x, msg.y);
+                    circle(circleCenterX, circleCenterY,
+                           (int)sqrt(pow((double)circleCenterX - (double)msg.x,
+                                         2) + pow((double)circleCenterY - (double)msg.y, 2)));
                 }
 
                 break;

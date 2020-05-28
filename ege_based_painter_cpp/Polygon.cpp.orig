@@ -52,7 +52,7 @@ myPolygon::myPolygon()
     polygonCount++;
 }
 
-myPolygon::myPolygon(const myPolygon &origShape)
+myPolygon::myPolygon(const myPolygon& origShape)
 {
     delete outlineColor;
     outlineColor      = new Color{ origShape.outlineColor->colorValue };

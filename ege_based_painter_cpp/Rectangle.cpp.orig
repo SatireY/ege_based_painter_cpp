@@ -48,7 +48,7 @@ myRectangle::myRectangle()
     rectangleCount++;
 }
 
-myRectangle::myRectangle(const myRectangle &origShape)
+myRectangle::myRectangle(const myRectangle& origShape)
 {
     delete outlineColor;
     outlineColor      = new Color{ origShape.outlineColor->colorValue };

@@ -19,15 +19,15 @@
 #include "Line.h"
 #include "Polygon.h"
 
-struct ShapeData
-{
-    SHAPE        shapeType;
-    int               extraData[10];
-    Coordinate        coords[50];
-    bool              isFill;
-    UINT              foregroundColor;
-    UINT              fillColor;
-};
+//struct ShapeData
+//{
+//    SHAPE        shapeType;
+//    int               extraData[10];
+//    Coordinate        coords[50];
+//    bool              isFill;
+//    UINT              foregroundColor;
+//    UINT              fillColor;
+//};
 
 struct MenuLnAndCol
 {

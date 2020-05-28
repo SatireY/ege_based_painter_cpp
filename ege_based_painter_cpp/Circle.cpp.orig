@@ -47,7 +47,7 @@ Circle::Circle()
     circleCount++;
 }
 
-Circle::Circle(const Circle &origShape)
+Circle::Circle(const Circle& origShape)
 {
     delete outlineColor;
     outlineColor    = new Color{ origShape.outlineColor->colorValue };
