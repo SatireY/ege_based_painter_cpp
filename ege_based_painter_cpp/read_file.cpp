@@ -221,6 +221,7 @@ READINGFAILED:
                                             break;
 
                                         default:
+                                            continue;
                                             break;
                                     }
 
@@ -234,6 +235,11 @@ READINGFAILED:
                                         switch (selection)
                                         {
                                             case IDRETRY:
+                                                for (auto i : shapeData)
+                                                {
+                                                    delete i;
+                                                    shapeData.pop_back();
+                                                }
                                                 goto case1;
                                                 break;
 
@@ -259,11 +265,10 @@ READINGFAILED:
 
                                 if (readResult) // check the validity of the data written
                                 {
-                                    MessageBox(NULL,
+                                   /* MessageBox(NULL,
                                                TEXT("读取成功"),
                                                TEXT("提示"),
-                                               MB_OK | MB_SYSTEMMODAL | MB_ICONINFORMATION);
-
+                                               MB_OK | MB_SYSTEMMODAL | MB_ICONINFORMATION);*/
 
                                     saveFileStream.close();
                                     readResult = 1;
