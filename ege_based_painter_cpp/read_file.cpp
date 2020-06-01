@@ -240,6 +240,7 @@ READINGFAILED:
                                                     delete i;
                                                     shapeData.pop_back();
                                                 }
+
                                                 goto case1;
                                                 break;
 
@@ -248,12 +249,6 @@ READINGFAILED:
                                                 break;
 
                                             case IDIGNORE:
-                                                for (auto i : shapeData)
-                                                {
-                                                    delete i;
-                                                    shapeData.pop_back();
-                                                }
-
                                                 return 0;
                                                 break;
 
