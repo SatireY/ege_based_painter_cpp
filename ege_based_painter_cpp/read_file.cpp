@@ -238,8 +238,9 @@ READINGFAILED:
                                                 for (auto i : shapeData)
                                                 {
                                                     delete i;
-                                                    shapeData.pop_back();
                                                 }
+
+                                                shapeData.erase(shapeData.begin(), shapeData.end());
 
                                                 goto case1;
                                                 break;

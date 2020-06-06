@@ -104,9 +104,8 @@ void ClearData(void)
     for (auto i : shapeData)
     {
         delete i;
-        shapeData.pop_back();
     }
-
+    shapeData.erase(shapeData.begin(), shapeData.end());
 }
 
 void DrawMenuOutline(WORD lnStart,
