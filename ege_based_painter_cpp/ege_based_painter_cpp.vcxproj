@@ -175,6 +175,7 @@
     <ClCompile Include="mouse_draw_line.cpp" />
     <ClCompile Include="mouse_draw_polygon.cpp" />
     <ClCompile Include="mouse_draw_rectangle.cpp" />
+    <ClCompile Include="operator_test.cpp" />
     <ClCompile Include="Polygon.cpp" />
     <ClCompile Include="read_file.cpp" />
     <ClCompile Include="Rectangle.cpp" />
@@ -197,6 +198,7 @@
     <ClInclude Include="mouse_draw_line.h" />
     <ClInclude Include="mouse_draw_polygon.h" />
     <ClInclude Include="mouse_draw_rectangle.h" />
+    <ClInclude Include="operator_test.h" />
     <ClInclude Include="Polygon.h" />
     <ClInclude Include="read_file.h" />
     <ClInclude Include="Rectangle.h" />

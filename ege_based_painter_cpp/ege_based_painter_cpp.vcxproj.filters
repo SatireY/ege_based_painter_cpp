@@ -78,6 +78,9 @@
     <ClCompile Include="mouse_draw_polygon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="operator_test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EGEEnvironmentController.h">
@@ -138,6 +141,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mouse_draw_polygon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="operator_test.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

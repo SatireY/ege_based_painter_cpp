@@ -157,7 +157,7 @@ READINGFAILED:
                                             }
 
                                             // close polygon
-                                            dataBuffer[dataBuffer[0] * 2 + 1] = dataBuffer[1]; 
+                                            dataBuffer[dataBuffer[0] * 2 + 1] = dataBuffer[1];
                                             dataBuffer[dataBuffer[0] * 2 + 2] = dataBuffer[2];
 
                                             saveFileStream >> dataBuffer[dataBuffer[0] * 2 + 3]; // outline color
@@ -261,10 +261,10 @@ READINGFAILED:
 
                                 if (readResult) // check the validity of the data written
                                 {
-                                   /* MessageBox(NULL,
-                                               TEXT("读取成功"),
-                                               TEXT("提示"),
-                                               MB_OK | MB_SYSTEMMODAL | MB_ICONINFORMATION);*/
+                                    /* MessageBox(NULL,
+                                                TEXT("读取成功"),
+                                                TEXT("提示"),
+                                                MB_OK | MB_SYSTEMMODAL | MB_ICONINFORMATION);*/
 
                                     saveFileStream.close();
                                     readResult = 1;

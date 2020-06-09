@@ -9,6 +9,7 @@
 #include "mouse_draw_line.h"
 #include "mouse_draw_polygon.h"
 #include "mouse_draw_rectangle.h"
+#include "operator_test.h"
 
 extern WORD g_nTotalShapes;
 extern bool g_isFileEdited;

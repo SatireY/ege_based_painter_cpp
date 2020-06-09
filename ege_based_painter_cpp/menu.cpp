@@ -2,7 +2,7 @@
 
 void Menu(bool readResult)
 {
-    const short int TOTAL_LN = 7;
+    const short int TOTAL_LN = 8;
 
     cleardevice();
     InitUI(0);
@@ -112,14 +112,13 @@ void Menu(bool readResult)
                         goto move;
                         break;
 
-                    //case 8: // 画多边形
-                    //    cleardevice();
-                    //    InitUI(0);
-                    //    coord_DrawPoly();
-                    //    cleardevice();
-                    //    InitUI(0);
-                    //    goto move;
-                    //    break;
+                    case 8: // 运算符重载测试
+                        cleardevice();
+                        operator_test();
+                        cleardevice();
+                        InitUI(0);
+                        goto move;
+                        break;
 
                     default:
                         break;
@@ -191,12 +190,12 @@ move:
                         PrintMenu(7);
                         break;
 
-                    /*case 8:
+                    case 8:
                         setcolor(0x000000);
                         PrintMenu(0);
                         setcolor(0x5050AA);
                         PrintMenu(8);
-                        break;*/
+                        break;
 
                     default:
                         break;
@@ -228,7 +227,7 @@ void PrintMenu(short int lnToPrint)
             xyprintf(8, 8 + 4 * graphicsEnvironment.GetMenuHeight(), "用鼠标画圆");
             xyprintf(8, 8 + 5 * graphicsEnvironment.GetMenuHeight(), "用鼠标画矩形");
             xyprintf(8, 8 + 6 * graphicsEnvironment.GetMenuHeight(), "用鼠标画多边形");
-            //xyprintf(8, 8 + 7 * graphicsEnvironment.GetMenuHeight(), "!!!（作业）坐标绘制多边形");
+            xyprintf(8, 8 + 7 * graphicsEnvironment.GetMenuHeight(), "运算符重载测试");
             break;
 
         case 1:
@@ -259,9 +258,9 @@ void PrintMenu(short int lnToPrint)
             xyprintf(8, 8 + 6 * graphicsEnvironment.GetMenuHeight(), "用鼠标画多边形");
             break;
 
-        /*case 8:
-            xyprintf(8, 8 + 7 * graphicsEnvironment.GetMenuHeight(), "!!!（作业）坐标绘制多边形");
-            break;*/
+        case 8:
+            xyprintf(8, 8 + 7 * graphicsEnvironment.GetMenuHeight(), "运算符重载测试");
+            break;
 
         default:
             break;

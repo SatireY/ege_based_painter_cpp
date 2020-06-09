@@ -105,6 +105,7 @@ void ClearData(void)
     {
         delete i;
     }
+
     shapeData.erase(shapeData.begin(), shapeData.end());
 }
 
