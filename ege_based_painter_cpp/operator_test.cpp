@@ -78,7 +78,7 @@ void operator_test()
 
     for (; is_run();
          delay_fps(
-             REFRESH_RATE)) // Using "for" statement to draw multiple circles at a time and refresh the screen
+             REFRESH_RATE))
     {
         msg = getmouse(); // Get mouse clicks and position
 
