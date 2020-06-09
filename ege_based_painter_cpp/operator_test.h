@@ -4,6 +4,7 @@
 #include "Coordinate.h"
 #include "Color.h"
 #include "Circle.h"
+#include <stdexcept>
 
 extern EGEEnvironmentController graphicsEnvironment;
 
